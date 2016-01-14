@@ -1,2 +1,6 @@
 # CashFlowManager
-This is a offline software use to manage your cashFlow.
+  Background: In the era of social data explosion,once the data transfers from local to net,there must be
+  
+
+
+
