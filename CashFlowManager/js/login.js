@@ -1,4 +1,7 @@
 /*读取是否第一次使用*/
+    var ifSecond=0;  //标签：验证登录密码
+    var ifDouble=0;  //标签：验证密码重复
+    var ifNameEmpty=0; //标签：验证昵称是否为空
 	function showAllTheData() {
             var db = getCurrentDb();//获取当前数据库
             db.transaction(function (trans) {
@@ -7,16 +10,22 @@
                     if(rowLength!=0){/*有数据*/
                     	/*读取数据库用户信息表*/
                     	getMaster();
-                    	$("body").append("<input / type='password' placeholder='密码' id='checkpassword'>");
-                    	$("body").append("<input type='button' id ='check' value='提交' onclick='checkInfo();'>");
+                    	$("#showArea").append("<input / type='password' placeholder='密码' id='checkpassword'>");
+                    	$("#showArea").append("<input type='button' id ='check' value='登录' onclick='checkInfo();'>");
+                    	$("#showArea").append("<label id='passwordtips'></label>");
+                    	$("#checkpassword").focus();
                     }
                       else{/*没数据*/
                       	console.log(rowLength);
                       	/*第一次使用，请求用户输入数据*/
-                        $("body").append("<h>欢迎使用CashFlowManager</h><br>")
-                      	$("body").append("<input / placeholder='昵称' id='nickname'><br>")
-                    	$("body").append("<input / placeholder='密码' id='password'>");
-                    	$("body").append("<input type='button' id ='submit' value='提交' onclick='initInfo();'>");
+                        $("#showArea").append("<h1>CashFlowManager</h1><br>")
+                      	$("#showArea").append("<input / placeholder='设置昵称' id='nickname'><br>")
+                    	$("#showArea").append("<input / placeholder='设置密码' id='password1' type='password'>");
+                    	$("#showArea").append("<input / placeholder='确认密码' id='password2' type='password'>");
+                    	$("#showArea").append("<input type='button' id ='submit' value='注册' onclick='initInfo();'>");
+                    	$("#showArea").append("<label id='tips'></label>");
+                    	$("#showArea").append("<label id='nicknametips'></label>");
+                    	$("#nickname").focus();
                       }
                     
                     
@@ -26,15 +35,20 @@
     }
 	/*首次使用添加用户信息*/
 	function initInfo(){
-		var nickname = $("#nickname").val();
-		var password = md5($("#password").val());
-		console.log("nickname:"+nickname);
-		/*新增用户*/
-		var db = getCurrentDb();
-		db.transaction(function (trans) {
-	            trans.executeSql("insert into UserTable(Nickname,Password) values(?,?) ", [nickname,password], function (ts, data) {
-    	         }, function (ts, message) {alert(message);});
-         });	
+		if(check()){
+			var nickname = $("#nickname").val();
+			var password = md5($("#password1").val());
+			console.log("nickname:"+nickname);
+			/*新增用户*/
+			var db = getCurrentDb();
+			db.transaction(function (trans) {
+		            trans.executeSql("insert into UserTable(Nickname,Password) values(?,?) ", [nickname,password], function (ts, data) {
+	    	        window.location.reload(); 
+		            }, function (ts, message) {alert(message);});
+	         });
+		}
+		
+         
 	}
 	/*获取用户信息*/
 	function getMaster(){
@@ -46,10 +60,11 @@
             	var passWord = data.rows.item(0).Password;
         		result[0]=userName;
         		result[1]=passWord;
-        		$("body").prepend("<h1>"+result[0]+"你好，请输入密码</h1>");
+        		$("#showArea").prepend("<h1>"+result[0]+"</h1>");
             }, function(ts, message) {alert(message);var tst = message;});
         });
 	}
+	/*验证登录密码*/
 	function checkInfo(){
 		var result = [];
 		var db = getCurrentDb();
@@ -67,15 +82,73 @@
         		console.log(md5pass);
         		if(md5pass==result[1]){
         			alert("登录成功");
+        			
         		}
         		else{
-        			alert("登录失败");
+        			
+        			if(ifSecond==0){
+        				$("#passwordtips").text("密码错误请重新输入");	
+        				ifSecond=1;
+        			}
+        			/*设置改正监听*/
+        			$("#checkpassword").on("focus",function(){
+        				if(ifSecond==1){
+        				$("#passwordtips").text("");
+        				ifSecond=0;
+        				}
+        			})
         		}
             }, function(ts, message) {alert(message);var tst = message;});
         });
         
 	}
-	
+	/*验证*/
+	function check(){
+		flag=1;
+		var name = $("#nickname").val();
+		var pass1 = $("#password1").val();
+		var pass2 = $("#password2").val();
+		/*检查密码一致*/
+		if(pass1!=pass2){
+			if(ifDouble==0){
+				$("#tips").text("两次密码不一致");
+				$("#password1").focus();
+				flag=0;
+				ifDouble=1;
+			}
+			
+			
+			$("#password1").on("focus",function(){
+				if(ifDouble==1){
+				$("#tips").text("");
+				ifDouble=0;
+				}
+			})
+			$("#password2").on("focus",function(){
+				if(ifDouble==1){
+				$("#tips").text("");
+				ifDouble=0;
+				}
+			})
+		}
 		
+		/*检查用户名不为空*/		
+		if(name==""){
+			if(ifNameEmpty==0){
+			$("#nicknametips").text("用户名不能为空");
+			flag=0;
+			ifNameEmpty=1;
+			}
+			$("#nickname").on("focus",function(){
+				if(ifNameEmpty==1){
+					$("#nicknametips").text("");
+					ifNameEmpty=0;
+				}
+				
+			})
+		}
+		return flag;
+	}
+	
 	
 	 
