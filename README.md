@@ -1,11 +1,11 @@
 # CashFlowManager
   Background: In the era of social data explosion,once the data transfers from local to net,there must be safety
-  problem.if your personal information is known by a website,you can hardly say if it can be attack by "black hat"
+  problem.if your personal information is known by a website,you can hardly say if it can be attacked by "black hat"
   ,even if the websites dont't have bad purpose itself;so,i think some software like alipay is unable to statistics 
   the real property information.
 
   so,this is a  "offline" software that used to manage your cashFlow.it is created to protect the property information
-  ,and improve people's asset management awareness,just as advocated by the novel <<richdad and poordad>>
+  ,and improve people's asset management awareness,just as advocated by the novel <<"richdad and poordad">>
 
   
   this software use html5's localdatabase to storage data.
@@ -26,7 +26,7 @@
     cash flow information will be display by two method.table and chart.
   
   4.report generation
-    on windows,run the run.bat ,you can start the node server.activate the generation function.
+    on windows,run the "run.bat" ,you can start the node server.activate the generate function.
   
   5.cashFlow CRUD
 
