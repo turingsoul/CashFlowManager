@@ -14,6 +14,13 @@
                     	$("#showArea").append("<input type='button' id ='check' value='登录' onclick='checkInfo();'>");
                     	$("#showArea").append("<label id='passwordtips'></label>");
                     	$("#checkpassword").focus();
+                    	/*绑定回车事件*/
+                    	$("#checkpassword").on("keydown",function(e){
+							if(e.which==13){
+								checkInfo();
+							}
+							
+                    	})
                     }
                       else{/*没数据*/
                       	console.log(rowLength);
@@ -26,6 +33,12 @@
                     	$("#showArea").append("<label id='tips'></label>");
                     	$("#showArea").append("<label id='nicknametips'></label>");
                     	$("#nickname").focus();
+                    	/*绑定回车监听*/
+                    	$("#password2").on("keydown",function(e){
+                    		if(e.which==13){
+                    			initInfo();	
+                    		}
+						})
                       }
                     
                     
@@ -82,6 +95,7 @@
         		console.log(md5pass);
         		if(md5pass==result[1]){
         			alert("登录成功");
+        			window.location.href="html/main.html";
         			
         		}
         		else{
@@ -149,6 +163,7 @@
 		}
 		return flag;
 	}
+	
 	
 	
 	 
