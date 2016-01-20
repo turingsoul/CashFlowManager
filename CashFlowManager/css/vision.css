@@ -1,0 +1,19 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background-image:url(../img/background2.jpg);
+	background-repeat: no-repeat;
+	background-size:auto ;
+}
+#changbg{
+	position: absolute;
+	left:30%;
+	top:0px;
+	width:60px;
+	height:60px;
+	background-size: cover;
+	background-image:url(../img/dollar.gif);
+	background-repeat:no-repeat;
+}

@@ -95,7 +95,7 @@
         		console.log(md5pass);
         		if(md5pass==result[1]){
         			alert("登录成功");
-        			window.location.href="html/main.html";
+        			window.location.href="html/vision.html";
         			
         		}
         		else{
