@@ -6,6 +6,7 @@ body{
 	background-image:url(../img/background2.jpg);
 	background-repeat: no-repeat;
 	background-size:auto ;
+	
 }
 #changbg{
 	position: absolute;
@@ -17,3 +18,103 @@ body{
 	background-image:url(../img/dollar.gif);
 	background-repeat:no-repeat;
 }
+#caption{
+	position: absolute;
+	left:50%;
+	margin-left:-250px;
+	width:500px;
+	height:200px; 
+	background:rgba(209,43,4,0.6);
+	border-radius: 20px;
+	/*box-shadow:rgb(250,0,0) 5px 5px 10px ;*/
+	/*-webkit-animation: changeShape 5s normal infinite;*/
+	min-width: 340px;
+	/*border:5px solid pink;*/
+}
+
+@-webkit-keyframes changeShape{
+	0%{box-shadow: rgba(157,218,219,0.1) 0px 0px 0px ;}
+	50%{box-shadow: rgba(200,223,229,2) 0px 0px 40px ;}
+	100%{box-shadow: rgba(157,218,219,0.1) 0px 0px 0px ;}
+}
+.cashflow{
+	position: absolute;
+	display:block;
+	top:60px;
+	height:80px;
+	width: 40px;
+	background:rgba(0,0,0,0.6);
+	border:1px solid white;
+	border-color:black rgba(255,255,255,0.4) rgba(255,255,255,0.4) black;
+	font-size: 80px;
+	color:yellow;
+	-webkit-user-select: none;
+}
+.pointer{
+	position: absolute;
+	top:95px;
+	font-size: 50px;
+	color:yellow;
+	-webkit-user-select: none;
+	
+}
+#pointer1{
+	left:365px;
+}
+#pointer2{
+	left:185px;
+}
+#cashflow1{
+	left:20px;
+}
+#cashflow2{
+	left:80px;
+}
+#cashflow3{
+	left:140px;
+}
+#cashflow4{
+	left:200px;
+}
+#cashflow5{
+	left:260px;
+}
+#cashflow6{
+	left:320px;
+}
+#cashflow7{
+	left:380px;
+}
+#cashflow8{
+	left:440px;
+}
+#sumCash{
+	position: absolute;
+	text-align: left;
+	height:25px;
+	width:250px;
+	top: 155px;
+	left:100px;
+	font-size: 25px;
+	color:yellow;
+	-webkit-user-select: none;
+}
+#totalAsset{
+		position: absolute;
+	text-align: right;
+	top:155px;
+	left:15px;
+	font-size: 25px;
+	color:yellow;
+}
+
+/*@keyframes changeShape{
+	0%{border-radius: 80% 0% 70% 0%;}
+	50%{border-radius: 0% 80% 0% 70%;}
+	100%{border-radius: 80% 0% 70% 0%;}
+}
+@-ms-keyframes changeShape{
+	0%{border-radius: 80% 0% 70% 0%;}
+	50%{border-radius: 0% 80% 0% 70%;}
+	100%{border-radius: 80% 0% 70% 0%;}
+}*/

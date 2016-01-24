@@ -13,7 +13,7 @@ $("#changbg").on("mousedown",function(e){
 			}
 			else{
 				$("#changbg").animate({"top":(150+(e.clientY-150)/4+"px")},0);  /*减速拖放*/
-				if(e.clientY>=550){
+				if(e.clientY>=450){
 					gotIt=true;
 				}
 			}
@@ -42,7 +42,10 @@ $(document).on("mouseup",function(e){
 			}
 			
 		}
-		
 })
+/*填写计算结果*/
+function writeNumber(a){
+	
+}
 
 
