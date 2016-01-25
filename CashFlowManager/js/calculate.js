@@ -72,14 +72,14 @@ function showCashFlowSum(a){
 }
 /*计算总金额*/
 function showCashSum(){
-	
-	
-	$("#sumCash").text(fmoney("23129238473411.33", 2));
-  
-
+	$("#sumCash").text(fmoney("23121411.33", 2));
+}
+function showPassiveCash(){
+	$("#passiveCash").text(fmoney("21411.33", 2));
 }
 showCashSum();
 showCashFlowSum(1.8374);
+showPassiveCash();
 
 /*数字与金额转换,四位隔开*/
 function fmoney(s, n) //s:传入的float数字 ，n:希望返回小数点几位 

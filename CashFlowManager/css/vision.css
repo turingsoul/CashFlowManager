@@ -10,10 +10,11 @@ body{
 }
 #changbg{
 	position: absolute;
-	left:30%;
+	left:50%;
+	margin-left: -240px;
 	top:0px;
-	width:60px;
-	height:60px;
+	width:55px;
+	height:55px;
 	background-size: cover;
 	background-image:url(../img/dollar.gif);
 	background-repeat:no-repeat;
@@ -99,22 +100,154 @@ body{
 	color:yellow;
 	-webkit-user-select: none;
 }
+#passiveCash{
+	position: absolute;
+	text-align: left;
+	height:25px;
+	width:250px;
+	top: 155px;
+	left:365px;
+	font-size: 25px;
+	color:#0cc4df;
+	-webkit-user-select: none;
+}
 #totalAsset{
-		position: absolute;
+	position: absolute;
 	text-align: right;
 	top:155px;
 	left:15px;
 	font-size: 25px;
 	color:yellow;
+	-webkit-user-select: none;
+}
+#bigCaption{
+	position:absolute;
+	left:50%;
+	top:10px;
+	margin-left:-180px;
+	font-weight:bold;
+	font-size: 40px;
+	letter-spacing: 4px;
+	color:rgba(95,255,0,1);
+	text-shadow: #107d76 2px 2px 2px;
+	-webkit-user-select: none;
+}
+#passiveCashFlow{
+	position: absolute;
+	text-align: right;
+	top:158px;
+	left:255px;
+	font-size: 20px;
+	color:#0cc4df;
+	-webkit-user-select: none;
+}
+/*收入表*/
+#inputBoard{
+	position:absolute;
+	left:20px;
+	top:100px;
+	border:rgba(255,255,255,0.1) 1px solid;
+	box-shadow:rgba(255,255,255,0.7) 0px 0px 10px;
+	width:23%;
+	height:30%;
+	overflow-y: scroll;
+	overflow-x:hidden;
+	color:white;
+	font-family: "微软雅黑";
+}
+#inputBoard table{
+	position: relative;
+	width:100%;
+}
+#inputBoard tr{
+	position: relative;
+	text-align: center;
+	width:100%;
+}
+#inputBoard td{
+	width: 50%;
+}
+#inputPlus{
+	position:absolute;
+	left:23%;
+	margin-left:24px;
+	padding-left:6px;
+	top:99px;
+	width:40px;
+	height:30px;
+	color:white;
+	font-size: 16px;
+	font-family:"微软雅黑";
+	font-weight:border;
+	background:rgba(255,0,0,0.6);
+}
+#inputPlus:hover{
+	background:rgba(229,210,16,0.8);
+	cursor:pointer;
+}
+/*滚动条设置*/
+/* 设置滚动条区域*/
+::-webkit-scrollbar {
+    width: 14px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+} 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
 }
 
-/*@keyframes changeShape{
-	0%{border-radius: 80% 0% 70% 0%;}
-	50%{border-radius: 0% 80% 0% 70%;}
-	100%{border-radius: 80% 0% 70% 0%;}
+#inputListCaption{
+	position: absolute;
+	left:20px;
+	top:40px;
+	font-size: 25px;
+	color:#FFA500;
+	font-family:"微软雅黑";
+	font-weight: normal;
+	-webkit-user-select: none;
 }
-@-ms-keyframes changeShape{
-	0%{border-radius: 80% 0% 70% 0%;}
-	50%{border-radius: 0% 80% 0% 70%;}
-	100%{border-radius: 80% 0% 70% 0%;}
-}*/
+#inputBoard{
+	-webkit-user-select: none;
+}
+#inputListCaption font{
+	position:absolute;
+	font-size:15px;
+	letter-spacing: 4px;
+}
+#inputSum{
+	position: absolute;
+	
+	left:12%;
+	top:65px;
+	font-size: 23px;
+	color:#FFA500;
+	font-family:"微软雅黑";
+	font-weight: normal;
+	-webkit-user-select: none;
+}
+/*收入面板添加数据*/
+#addInput{
+	position: absolute;
+	left:50%;
+	margin-left:-250px;
+	top:50%;
+	margin-top:-100px;
+	width:500px;
+	height:200px;
+	background:rgba(0,0,0,0.5);
+	box-shadow: rgba(0,0,0,1) 1px 1px 5px;
+	border-radius: 20px;
+	color:white;
+}
+
