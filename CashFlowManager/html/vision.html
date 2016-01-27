@@ -4,11 +4,12 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/vision.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery.selectlist.css"/>
 		
 	</head>
 	<body>
 		
-		<!--显示频-->
+		<!--显示屏-->
 		<div id="caption">
 			<font id="bigCaption"></font>
 			<font class="cashflow" id="cashflow1">0</font>
@@ -78,6 +79,17 @@
 		<div id="addInput">
 			<input type="text" class = "input_addinput" id="input_add1" placeholder="项目"/>
 			<input type="text" class = "input_addinput" id="input_add2" placeholder="金额"/>
+			<select id="select_input">
+				 <option value ="1">工资</option>
+				 <option value ="1">利息</option>
+				 <option value ="1">股息</option>
+				 <option value ="1">劳务报酬</option>
+				 <option value ="1">生意</option>
+				 <option value ="1">住房补贴</option>
+				 <option value ="1">单位缴公积金</option>
+				 <option value ="1">其他</option>
+				 
+			</select>
 			<div id="btnInputSummit" class="btnInput">确定</div>
 			<div id="btnInputCancel" class="btnInput">取消</div>
 		</div>
@@ -85,6 +97,19 @@
 		<script src="../js/changebkg.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/calculate.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/addInput.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery.selectlist.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#select_input').selectlist({
+					zIndex: 11,
+					width: 400,
+					height: 30,
+					showMaxHeight:250,
+					triangleSize: 6,   //右侧小三角大小
+           			triangleColor: '#cd992f'  //右侧小三角颜色
+				});
+			})
+		</script>
 		
 	</body>
 </html>

@@ -262,6 +262,7 @@ body{
 	border-color: white;
 	outline: none;
 	color:#ccc;
+	
 	text-align: center;
 	left:50%;
 }
@@ -271,23 +272,44 @@ body{
 #input_add2{
 	margin-left: 30px;
 }
+/*添加收入项按钮*/
 .btnInput{
 	position: absolute;
-	width: 90px;
+	width:140px;
 	height:30px;
 	text-align: center;
 	cursor:pointer;
 	font-family: "微软雅黑";
 	font-size: 15px;
-	top:130px;
+	top:140px;
 	left:50%;
 	line-height: 30px;
+	border-radius: 10px;
 }
 #btnInputSummit{
 	background:orange;
-	margin-left:-150px;
+	margin-left:-180px;
 }
 #btnInputCancel{
 	background:grey;
-	margin-left:70px;
+	margin-left:40px;
 }
+/*收入选项下拉框*/
+#select_input{
+	position: absolute;
+	background-color: mediumpurple;
+	top:80px;
+	color:black;
+	left:50%;
+	margin-left:-200px;
+	background:url(../img/inputbkg.png);
+	border: none;
+	border-top: 1px solid #9370DB;
+	border-bottom: 1px solid #9370DB;
+	text-align: center;
+}
+#select_input:hover{
+	border-top: 1px solid #FFA500;
+	border-bottom: 1px solid #FFA500;
+}
+
