@@ -312,4 +312,16 @@ body{
 	border-top: 1px solid #FFA500;
 	border-bottom: 1px solid #FFA500;
 }
+/*收入弹出框信息提示*/
+#addTips{
+	position: absolute;
+	left:50%;
+	margin-left:-75px;
+	top:10px;
+	width:150px;
+	height:26px;
+	text-align: center;
+	font-family: "microsoft yahei";
+	color:#FFFF00;
+}
 
