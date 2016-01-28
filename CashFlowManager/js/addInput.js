@@ -1,8 +1,16 @@
+/*文档加载结束执行*/
+$(function() {
+	init();
+	showAllTheData();
+
+});
 /*函数初始化*/
 function init(){
+	
 	$("#addInput").hide(0);
+
 }
-init();
+
 $("#inputPlus").on("click",function(){
 	$("#addInput").show(500);
 })
@@ -17,11 +25,25 @@ $("#btnInputCancel").on("click",function(){
 })
 /*确定操作*/
 $("#btnInputSummit").on("click",function(){
+	var nodeName = $("#input_add1").val();
+	var nodeValue = $("#input_add2").val();
+	var tag = $("#select_input").find("input").get(0).value;//获得第一个input元素的value值
+	var timeNow = currentTime();
 	/*非空以及负数验证*/
 	checkInputData();
 	/*重复验证*/
 	/*TODO*/
-	
+	if(checkInputData()){
+		/*添加数据进去*/
+		/*初始化数据库输入表*/
+		initInputTable();
+		var db = getCurrentDb();
+		db.transaction(function (trans) {
+	            trans.executeSql("insert into InputTable(InputName,InputValue,InputTag,CurrentTime) values(?,?,?,?) ", [nodeName,nodeValue,tag,timeNow], function (ts, data) {
+    	        $("#addInput").hide(500);alert("添加成功");showAllTheData();
+	            }, function (ts, message) {console.log(message)});
+         });
+	}
 	
 	
 })
@@ -49,4 +71,14 @@ function checkInputData(){
 		$("#addTips").text("");
 		return 1;
 	}
+}
+
+function deleteTR(e){
+	if(confirm("确定删除此条内容")){
+			var $current = $(e);
+			$current.parent().remove();
+			/*获取这行的内容*/
+			var toDeleteDate = $($current.parent().find("td").get(0)).text();
+			deleteTheData(toDeleteDate);
+		}
 }

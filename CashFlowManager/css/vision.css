@@ -324,4 +324,27 @@ body{
 	font-family: "microsoft yahei";
 	color:#FFFF00;
 }
-
+#first{
+	font-size: 15px;
+}
+.delete{
+	display: block;
+	width:30px;
+	padding-bottom: 6px;
+	padding-top: -10px;
+	font-size: 20px;
+	color:grey;
+	opacity: 1;
+	line-height: 20px;
+}
+.delete:hover{
+	padding-bottom: 6px;
+	display: block;
+	line-height: 20px;
+	width:30px;
+	line-height: 20px;
+	font-size: 20px;
+	color:red;
+	opacity: 1;
+	cursor: pointer;
+}

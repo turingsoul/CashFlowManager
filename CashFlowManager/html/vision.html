@@ -34,7 +34,7 @@
 		<h4 id="inputSum">293492384</h4>
 		<div id="inputPlus">添加</div>
 		<div id="inputBoard">
-			<table>
+			<table id="first">
 				<tr><td>003</td><td>003</td></tr>
 				<tr><td>003</td><td>003</td></tr>
 				<tr><td>003</td><td>003</td></tr>
@@ -82,14 +82,13 @@
 			<div id="addTips"></div>
 			<select id="select_input">
 				 <option value ="1">工资</option>
-				 <option value ="1">利息</option>
-				 <option value ="1">股息</option>
-				 <option value ="1">劳务报酬</option>
-				 <option value ="1">生意</option>
-				 <option value ="1">住房补贴</option>
-				 <option value ="1">单位缴公积金</option>
-				 <option value ="1">其他</option>
-				 
+				 <option value ="2">利息</option>
+				 <option value ="3">股息</option>
+				 <option value ="4">劳务报酬</option>
+				 <option value ="5">生意</option>
+				 <option value ="6">住房补贴</option>
+				 <option value ="7">单位缴公积金</option>
+				 <option value ="8">其他</option>
 			</select>
 			<div id="btnInputSummit" class="btnInput">确定</div>
 			<div id="btnInputCancel" class="btnInput">取消</div>
@@ -99,6 +98,7 @@
 		<script src="../js/calculate.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/addInput.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jquery.selectlist.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/initDatabase.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function(){
 				$('#select_input').selectlist({
