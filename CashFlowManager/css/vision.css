@@ -294,6 +294,10 @@ body{
 	background:grey;
 	margin-left:40px;
 }
+#btnInputUpdate{
+	background:orange;
+	margin-left:-180px;
+}
 /*收入选项下拉框*/
 #select_input{
 	position: absolute;
@@ -347,4 +351,7 @@ body{
 	color:red;
 	opacity: 1;
 	cursor: pointer;
+}
+tr:hover{
+	cursor:pointer;
 }

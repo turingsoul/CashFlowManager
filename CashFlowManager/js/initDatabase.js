@@ -64,7 +64,7 @@
                         }
                         /*将数据显示出来*/
                        for(var i=0;i<data.rows.length;i++){
-                       		$("#first").append("<tr><td>"+a[i]+"</td><td>"+b[i]+"</td><td class='delete' onclick='deleteTR(this)'>x</td></tr>");
+                       		$("#first").append("<tr ondblclick='inputUpdate(this)'><td>"+a[i]+"</td><td>"+b[i]+"</td><td class='delete' onclick='deleteTR(this)'>x</td></tr>");
                        }
                        /*getSum1();*/
                     }
@@ -83,6 +83,8 @@
                 }, function(ts, message) {alert(message);var tst = message;});
             });
         }
+	   /*根据名字查询flag*/
+	  
 	function currentTime(){
 		 var d = new Date(),str = '';
 		 str += d.getFullYear()+',';
