@@ -69,7 +69,7 @@
                        /*getSum1();*/
                     }
                     
-                }, function(ts, message) {alert(message);var tst = message;});
+                }, function(ts, message) {initInputTable();});
             });
         }
 	  
