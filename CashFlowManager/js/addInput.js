@@ -10,9 +10,13 @@ function init(){
 	$("#addInput").hide(0);
 
 }
-
+/*点击添加按钮操作*/
 $("#inputPlus").on("click",function(){
 	$("#addInput").show(500);
+		$("#input_add1").removeAttr("readonly");
+	
+	$("#input_add1").removeClass("text-get");
+	
 })
 /*取消操作*/
 $("#btnInputCancel").on("click",function(){
@@ -58,7 +62,7 @@ $("#btnInputUpdate").on("click",function(){
 	var db = getCurrentDb();
 		db.transaction(function (trans) {
 	            trans.executeSql(" update InputTable set InputValue = ?,InputTag = ?,CurrentTime=? where InputName = ?", [nodeValue,tag,timeNow,nodeName], function (ts, data) {
-    	        $("#addInput").hide(500);alert("修改成功");showAllTheData();
+    	        $("#addInput").hide(500);showAllTheData();
 	            }, function (ts, message) {console.log(message)});
          });
 	
@@ -101,6 +105,10 @@ function deleteTR(e){
 }
 /*打开更新数据弹出框*/
 function inputUpdate(e){
+	$("#input_add1").attr("readonly","readonly");
+	
+	$("#input_add1").addClass("text-get");
+	/*$("#input_addinput").attr("readOnly","true");*/
 	var $current = $(e);
 	var nodeName = $($current.find("td").get(0)).text();
 	var nodeValue = $($current.find("td").get(1)).text();

@@ -355,3 +355,7 @@ body{
 tr:hover{
 	cursor:pointer;
 }
+/*设置文字可选择类*/
+.text-get{
+	-webkit-user-select: none;
+}
