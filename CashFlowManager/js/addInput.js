@@ -53,7 +53,7 @@ $("#btnInputUpdate").on("click",function(){
 	var timeNow = currentTime();
 	var db = getCurrentDb();
 		db.transaction(function (trans) {
-	            trans.executeSql(" update InputTable set InputValue = ?,InputTag = ?,CurrentTime=? where InputName = ?", [nodeValue,tag,timeNow,nodeName], function (ts, data) {
+	            trans.executeSql(" update InputTable set InputValue = ?,InputTag = ?,CurrentTime=? where InputName = ?", [Base64.encode(nodeValue),Base64.encode(tag),Base64.encode(timeNow),Base64.encode(nodeName)], function (ts, data) {
     	        $("#addInput").hide(500);showAllTheData();
     	         $("#input_add1").val("");
     	        $("#input_add2").val("");
@@ -107,7 +107,7 @@ function deleteTR(e){
 function checkInputRepeat(nodeName,nodeValue,tag,timeNow){
 	var db = getCurrentDb();
 	db.transaction(function (trans) {
-				trans.executeSql("select InputTag from InputTable where InputName = ?", [nodeName],function (ts, data) {
+				trans.executeSql("select InputTag from InputTable where InputName = ?", [Base64.encode(nodeName)],function (ts, data) {
 	    	       	if(data.rows.length!=0){
 	    	       		$("#addTips").text("名字重复");
 	    	       	}
@@ -117,7 +117,7 @@ function checkInputRepeat(nodeName,nodeValue,tag,timeNow){
 						initInputTable();
 						var db = getCurrentDb();
 						db.transaction(function (trans) {
-					            trans.executeSql("insert into InputTable(InputName,InputValue,InputTag,CurrentTime) values(?,?,?,?) ", [nodeName,nodeValue,tag,timeNow], function (ts, data) {
+					            trans.executeSql("insert into InputTable(InputName,InputValue,InputTag,CurrentTime) values(?,?,?,?) ", [Base64.encode(nodeName),Base64.encode(nodeValue),Base64.encode(tag),Base64.encode(timeNow)], function (ts, data) {
 				    	        $("#addInput").hide(500);
 				    	        $("#input_add1").val("");
 				    	        $("#input_add2").val("");
@@ -144,8 +144,8 @@ function inputUpdate(e){
 	/*根据名称查询flag*/
 	var db = getCurrentDb();
 		db.transaction(function (trans) {
-	            trans.executeSql("select InputTag from InputTable where InputName = ?", [nodeName], function (ts, data) {
-    	        InputTag = data.rows[0].InputTag;
+	            trans.executeSql("select InputTag from InputTable where InputName = ?", [Base64.encode(nodeName)], function (ts, data) {
+    	        InputTag = Base64.decode(data.rows[0].InputTag);
     	        TagContent = findInputTagContent(InputTag);
     	        showSelect(InputTag,TagContent);
     	        /**/

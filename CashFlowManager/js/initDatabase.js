@@ -64,7 +64,7 @@
                         }
                         /*将数据显示出来*/
                        for(var i=0;i<data.rows.length;i++){
-                       		$("#first").append("<tr ondblclick='inputUpdate(this)'><td>"+a[i]+"</td><td>"+b[i]+"</td><td class='delete' onclick='deleteTR(this)'>x</td></tr>");
+                       		$("#first").append("<tr ondblclick='inputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteTR(this)'>x</td></tr>");
                        }
                        /*getSum1();*/
                     }
@@ -77,7 +77,7 @@
 	   function deleteTheData(e) {
             var db = getCurrentDb();
             db.transaction(function (trans) {
-                trans.executeSql("delete from InputTable where InputName = ?", [e], function (ts, data) {
+                trans.executeSql("delete from InputTable where InputName = ?", [Base64.encode(e)], function (ts, data) {
                 	/*删除完毕，刷新数据*/
                 	showAllTheData();
                 }, function(ts, message) {alert(message);var tst = message;});
