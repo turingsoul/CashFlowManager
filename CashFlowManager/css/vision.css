@@ -359,3 +359,268 @@ tr:hover{
 .text-get{
 	-webkit-user-select: none;
 }
+/*支出面板
+ * 
+ * 
+ * 
+ * 
+ * */
+
+#outputListCaption{
+	position: absolute;
+	right:90px;
+	top:40px;
+	font-size: 25px;
+	color:#FFA500;
+	font-family:"微软雅黑";
+	font-weight: normal;
+	-webkit-user-select: none;
+}
+#outputListCaption font{
+	position:absolute;
+	font-size:15px;
+	letter-spacing: 4px;
+}
+#outputSum{
+	position: absolute;
+	right:15%;
+	top:45px;
+	margin-top:22px;
+	font-size: 23px;
+	color:#FFA500;
+	font-family:"微软雅黑";
+	font-weight: normal;
+	-webkit-user-select: none;
+}
+#outputBoard{
+	position:absolute;
+	right:60px;
+	top:100px;
+	border:rgba(255,255,255,0.1) 1px solid;
+	box-shadow:rgba(255,255,255,0.7) 0px 0px 10px;
+	width:23%;
+	height:30%;
+	overflow-y: scroll;
+	overflow-x:hidden;
+	color:white;
+	font-family: "微软雅黑";
+}
+#outputBoard table{
+	position: relative;
+	width:100%;
+}
+#outputBoard tr{
+	position: relative;
+	text-align: center;
+	width:100%;
+}
+#outputBoard td{
+	width: 50%;
+}
+.output_addoutput{
+	position:absolute;
+	top:30px;
+	width: 170px;
+	height:25px;
+	background:none;
+	border:none;
+	border-bottom: solid 1px rgba(255,255,255,0.3);
+	border-color: white;
+	outline: none;
+	color:#ccc;
+	text-align: center;
+	left:50%;
+}
+#output_add1{
+	margin-left: -200px;
+}
+#output_add2{
+	margin-left: 30px;
+}
+#addOutput{
+	position: absolute;
+	left:50%;
+	margin-left:-250px;
+	top:50%;
+	margin-top:-100px;
+	width:500px;
+	height:200px;
+	background:rgba(0,0,0,0.5);
+	box-shadow: rgba(0,0,0,1) 1px 1px 5px;
+	border-radius: 20px;
+	color:white;
+}
+#outputTips{
+	position: absolute;
+	left:50%;
+	margin-left:-75px;
+	top:10px;
+	width:150px;
+	height:26px;
+	text-align: center;
+	font-family: "microsoft yahei";
+	color:#FFFF00;
+}
+#select_output{
+	position: absolute;
+	background-color: mediumpurple;
+	top:80px;
+	color:black;
+	left:50%;
+	margin-left:-200px;
+	background:url(../img/inputbkg.png);
+	border: none;
+	border-top: 1px solid #9370DB;
+	border-bottom: 1px solid #9370DB;
+	text-align: center;
+}
+#select_output:hover{
+	border-top: 1px solid #FFA500;
+	border-bottom: 1px solid #FFA500;
+}
+#btnOutputSummit{
+	background:orange;
+	margin-left:-180px;
+}
+#btnOutputCancel{
+	background:grey;
+	margin-left:40px;
+}
+#btnOutputUpdate{
+	background:orange;
+	margin-left:-180px;
+}
+#outputPlus{
+	position:absolute;
+	right:18px;
+	top:99px;
+	width:40px;
+	height:30px;
+	color:white;
+	font-size: 16px;
+	font-family:"微软雅黑";
+	font-weight:border;
+	background:rgba(255,0,0,0.6);
+	-webkit-user-select: none;
+	text-align: center;
+	
+}
+#outputPlus:hover{
+	background:rgba(229,210,16,0.8);
+	cursor:pointer;
+}
+/*资产面板
+ * 
+ * 
+ * 
+ * 
+ * 
+ * */
+#assetListCaption{
+	position: absolute;
+	left:20px;
+	top:58%;
+	font-size: 25px;
+	color:#FFA500;
+	font-family:"微软雅黑";
+	font-weight: normal;
+	-webkit-user-select: none;
+	margin-top:-60px;
+}
+#assetListCaption font{
+	position:absolute;
+	font-size:15px;
+	letter-spacing: 4px;
+}
+#assetSum{
+	position: absolute;
+	left:12%;
+	top:58%;
+	margin-top:-35px;
+	font-size: 23px;
+	color:#FFA500;
+	font-family:"微软雅黑";
+	font-weight: normal;
+	-webkit-user-select: none;
+}
+#assetBoard{
+	position:absolute;
+	left:20px;
+	top:58%;
+	border:rgba(255,255,255,0.1) 1px solid;
+	box-shadow:rgba(255,255,255,0.7) 0px 0px 10px;
+	width:23%;
+	height:30%;
+	overflow-y: scroll;
+	overflow-x:hidden;
+	color:white;
+	font-family: "微软雅黑";
+}
+#assetBoard table{
+	position: relative;
+	width:100%;
+}
+#assetBoard tr{
+	position: relative;
+	text-align: center;
+	width:100%;
+}
+#assetBoard td{
+	width: 50%;
+}
+/*
+ *负债面板 
+ * 
+ * */
+#debtListCaption{
+	position: absolute;
+	right:90px;
+	top:58%;
+	font-size: 25px;
+	color:#FFA500;
+	font-family:"微软雅黑";
+	font-weight: normal;
+	-webkit-user-select: none;
+	margin-top:-60px;
+}
+#debtListCaption font{
+	position:absolute;
+	font-size:15px;
+	letter-spacing: 4px;
+}
+#debtSum{
+	position: absolute;
+	right:15%;
+	top:58%;
+	margin-top:-35px;
+	font-size: 23px;
+	color:#FFA500;
+	font-family:"微软雅黑";
+	font-weight: normal;
+	-webkit-user-select: none;
+}
+#debtBoard{
+	position:absolute;
+	right:60px;
+	top:58%;
+	border:rgba(255,255,255,0.1) 1px solid;
+	box-shadow:rgba(255,255,255,0.7) 0px 0px 10px;
+	width:23%;
+	height:30%;
+	overflow-y: scroll;
+	overflow-x:hidden;
+	color:white;
+	font-family: "微软雅黑";
+}
+#debtBoard table{
+	position: relative;
+	width:100%;
+}
+#debtBoard tr{
+	position: relative;
+	text-align: center;
+	width:100%;
+}
+#debtBoard td{
+	width: 50%;
+}

@@ -6,10 +6,12 @@ $(function() {
 });
 /*函数初始化*/
 function init(){
+	$("#addOutput").hide(0);
 	$("#updata_Input").hide(0);
 	$("#addInput").hide(0);
 
 }
+
 /*点击添加按钮操作*/
 $("#inputPlus").on("click",function(){
 	$("#addInput").show(500);
