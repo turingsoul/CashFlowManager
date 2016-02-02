@@ -568,6 +568,114 @@ tr:hover{
 #assetBoard td{
 	width: 50%;
 }
+
+.asset_addasset{
+	position:absolute;
+	top:30px;
+	width: 170px;
+	height:25px;
+	background:none;
+	border:none;
+	border-bottom: solid 1px rgba(255,255,255,0.3);
+	border-color: white;
+	outline: none;
+	color:#ccc;
+	text-align: center;
+	left:50%;
+}
+#asset_add1{
+	margin-left: -200px;
+}
+#asset_add2{
+	margin-left: 30px;
+}
+#addAsset{
+	position: absolute;
+	left:50%;
+	margin-left:-250px;
+	top:50%;
+	margin-top:-100px;
+	width:500px;
+	height:200px;
+	background:rgba(0,0,0,0.5);
+	box-shadow: rgba(0,0,0,1) 1px 1px 5px;
+	border-radius: 20px;
+	color:white;
+}
+#assetTips{
+	position: absolute;
+	left:50%;
+	margin-left:-75px;
+	top:10px;
+	width:150px;
+	height:26px;
+	text-align: center;
+	font-family: "microsoft yahei";
+	color:#FFFF00;
+}
+#select_asset{
+	position: absolute;
+	background-color: mediumpurple;
+	top:80px;
+	color:black;
+	left:50%;
+	margin-left:-200px;
+	background:url(../img/inputbkg.png);
+	border: none;
+	border-top: 1px solid #9370DB;
+	border-bottom: 1px solid #9370DB;
+	text-align: center;
+}
+#select_asset:hover{
+	border-top: 1px solid #FFA500;
+	border-bottom: 1px solid #FFA500;
+}
+#btnAssetSummit{
+	background:orange;
+	margin-left:-180px;
+}
+#btnAssetCancel{
+	background:grey;
+	margin-left:40px;
+}
+#btnAssetUpdate{
+	background:orange;
+	margin-left:-180px;
+}
+#assetPlus{
+	position:absolute;
+	left:23%;
+	margin-left:24px;
+	padding-left:6px;
+	top:58%;
+	width:40px;
+	height:30px;
+	color:white;
+	font-size: 16px;
+	font-family:"微软雅黑";
+	font-weight:border;
+	background:rgba(255,0,0,0.6);
+	-webkit-user-select: none;
+	text-align: center;
+	
+}
+#assetPlus:hover{
+	background:rgba(229,210,16,0.8);
+	cursor:pointer;
+}
+.btnAsset{
+	position: absolute;
+	width:140px;
+	height:30px;
+	text-align: center;
+	cursor:pointer;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	top:140px;
+	left:50%;
+	line-height: 30px;
+	border-radius: 10px;
+}
 /*
  *负债面板 
  * 
@@ -623,4 +731,111 @@ tr:hover{
 }
 #debtBoard td{
 	width: 50%;
+}
+.debt_adddebt{
+	position:absolute;
+	top:30px;
+	width: 170px;
+	height:25px;
+	background:none;
+	border:none;
+	border-bottom: solid 1px rgba(255,255,255,0.3);
+	border-color: white;
+	outline: none;
+	color:#ccc;
+	text-align: center;
+	left:50%;
+}
+#debt_add1{
+	margin-left: -200px;
+}
+#debt_add2{
+	margin-left: 30px;
+}
+#addDebt{
+	position: absolute;
+	left:50%;
+	margin-left:-250px;
+	top:50%;
+	margin-top:-100px;
+	width:500px;
+	height:200px;
+	background:rgba(0,0,0,0.5);
+	box-shadow: rgba(0,0,0,1) 1px 1px 5px;
+	border-radius: 20px;
+	color:white;
+}
+#debtTips{
+	position: absolute;
+	left:50%;
+	margin-left:-75px;
+	top:10px;
+	width:150px;
+	height:26px;
+	text-align: center;
+	font-family: "microsoft yahei";
+	color:#FFFF00;
+}
+#select_debt{
+	position: absolute;
+	background-color: mediumpurple;
+	top:80px;
+	color:black;
+	left:50%;
+	margin-left:-200px;
+	background:url(../img/inputbkg.png);
+	border: none;
+	border-top: 1px solid #9370DB;
+	border-bottom: 1px solid #9370DB;
+	text-align: center;
+}
+#select_debt:hover{
+	border-top: 1px solid #FFA500;
+	border-bottom: 1px solid #FFA500;
+}
+#btnDebtSummit{
+	background:orange;
+	margin-left:-180px;
+}
+#btnDebtCancel{
+	background:grey;
+	margin-left:40px;
+}
+#btnDebtUpdate{
+	background:orange;
+	margin-left:-180px;
+}
+#debtPlus{
+	position:absolute;
+	left:23%;
+	margin-left:24px;
+	padding-left:6px;
+	top:58%;
+	width:40px;
+	height:30px;
+	color:white;
+	font-size: 16px;
+	font-family:"微软雅黑";
+	font-weight:border;
+	background:rgba(255,0,0,0.6);
+	-webkit-user-select: none;
+	text-align: center;
+	
+}
+#debtPlus:hover{
+	background:rgba(229,210,16,0.8);
+	cursor:pointer;
+}
+.btnDebt{
+	position: absolute;
+	width:140px;
+	height:30px;
+	text-align: center;
+	cursor:pointer;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	top:140px;
+	left:50%;
+	line-height: 30px;
+	border-radius: 10px;
 }
