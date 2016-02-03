@@ -23,15 +23,15 @@ $("#inputPlus").on("click",function(){
 	$("#input_add1").focus();
 	
 })
-/*取消操作*/
+/*取消操作over*/
 $("#btnInputCancel").on("click",function(){
-	/*隐藏弹出框*/
+	/*隐藏弹出框over*/
 	$("#addInput").hide(500);
-	/*清空弹出框*/
+	/*清空弹出框over*/
 	$("#input_add1").val("");
 	$("#input_add2").val("");
 	$("#addTips").text("");
-	/*恢复正常隐藏*/
+	/*恢复正常隐藏over*/
 	hideORshow();
 })
 /*确定操作*/
@@ -45,8 +45,6 @@ $("#btnInputSummit").on("click",function(){
 		/*重复验证*/
 		checkInputRepeat(nodeName,nodeValue,tag,timeNow);
 	}
-	
-	
 })
 /*确认修改操作*/
 $("#btnInputUpdate").on("click",function(){
