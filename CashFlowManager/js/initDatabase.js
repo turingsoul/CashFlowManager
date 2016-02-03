@@ -107,7 +107,7 @@
                         }
                         /*将数据显示出来*/
                        for(var i=0;i<data.rows.length;i++){
-                       		$("#first").append("<tr ondblclick='inputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteTR(this)'>x</td></tr>");
+                       		$("#first").append("<tr ondblclick='inputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteInputTr(this)'>x</td></tr>");
                        }
                        /*getSum1();*/
                     }
@@ -126,7 +126,7 @@
                         }
                         /*将数据显示出来*/
                        for(var i=0;i<data.rows.length;i++){
-                       		$("#second").append("<tr ondblclick='otputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteTR(this)'>x</td></tr>");
+                       		$("#second").append("<tr ondblclick='otputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteOutputTr(this)'>x</td></tr>");
                        }
                        /*getSum1();*/
                     }
@@ -145,7 +145,7 @@
                         }
                         /*将数据显示出来*/
                        for(var i=0;i<data.rows.length;i++){
-                       		$("#third").append("<tr ondblclick='assetUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteTR(this)'>x</td></tr>");
+                       		$("#third").append("<tr ondblclick='assetUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteAssetTr(this)'>x</td></tr>");
                        }
                        /*getSum1();*/
                     }
@@ -164,7 +164,7 @@
                         }
                         /*将数据显示出来*/
                        for(var i=0;i<data.rows.length;i++){
-                       		$("#forth").append("<tr ondblclick='debtUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteTR(this)'>x</td></tr>");
+                       		$("#forth").append("<tr ondblclick='debtUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteDebtTr(this)'>x</td></tr>");
                        }
                        /*getSum1();*/
                     }
@@ -174,10 +174,40 @@
         }
 	  
 	  /*删除收入表指定信息*/
-	   function deleteTheData(e) {
+	   function deleteInputData(e) {
             var db = getCurrentDb();
             db.transaction(function (trans) {
                 trans.executeSql("delete from InputTable where InputName = ?", [Base64.encode(e)], function (ts, data) {
+                	/*删除完毕，刷新数据*/
+                	showAllTheData();
+                }, function(ts, message) {alert(message);var tst = message;});
+            });
+        }
+	   /*删除支出表指定信息*/
+	   function deleteOutputData(e) {
+            var db = getCurrentDb();
+            db.transaction(function (trans) {
+                trans.executeSql("delete from OutputTable where OutputName = ?", [Base64.encode(e)], function (ts, data) {
+                	/*删除完毕，刷新数据*/
+                	showAllTheData();
+                }, function(ts, message) {alert(message);var tst = message;});
+            });
+        }
+	   /*删除资产表指定信息*/
+	   function deleteAssetData(e) {
+            var db = getCurrentDb();
+            db.transaction(function (trans) {
+                trans.executeSql("delete from AssetTable where AssetName = ?", [Base64.encode(e)], function (ts, data) {
+                	/*删除完毕，刷新数据*/
+                	showAllTheData();
+                }, function(ts, message) {alert(message);var tst = message;});
+            });
+        }
+	   /*删除债务表指定信息*/
+	   function deleteDebtData(e) {
+            var db = getCurrentDb();
+            db.transaction(function (trans) {
+                trans.executeSql("delete from DebtTable where DebtName = ?", [Base64.encode(e)], function (ts, data) {
                 	/*删除完毕，刷新数据*/
                 	showAllTheData();
                 }, function(ts, message) {alert(message);var tst = message;});
