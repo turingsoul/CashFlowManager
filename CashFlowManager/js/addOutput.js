@@ -1,8 +1,4 @@
 
-/*取消添加面板*/
-$("#btnOutputCancel").on("click",function(){
-	$("#addOutput").hide(500);
-})
 /*点击添加按钮操作*/
 $("#outputPlus").on("click",function(){
 	$("#addOutput").show(500);
@@ -10,5 +6,15 @@ $("#outputPlus").on("click",function(){
 	$("#otuput_add1").removeClass("text-get");
 	/*聚焦操作*/
 	$("#output_add1").focus();
-	
+})
+/*取消操作*/
+$("#btnOutputCancel").on("click",function(){
+	/*隐藏弹出框*/
+	$("#addOutput").hide(500);
+	/*清空弹出框*/
+	$("#output_add1").val("");
+	$("#output_add2").val("");
+	$("#outputTips").text("");
+	/*恢复正常隐藏*/
+	hideORshow1();
 })

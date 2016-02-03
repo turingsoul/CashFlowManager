@@ -13,7 +13,7 @@ function init(){
 	$("#addDebt").hide(0);
 }
 
-/*点击添加按钮操作*/
+/*点击添加按钮操作over*/
 $("#inputPlus").on("click",function(){
 	$("#addInput").show(500);
 		$("#input_add1").removeAttr("readonly");
@@ -169,6 +169,18 @@ function inputDateUpdate(){
 function hideORshow(){
 	$("#btnInputSummit").show(0);
 	$("#btnInputUpdate").hide(0);
+}
+function hideORshow1(){
+	$("#btnOutputSummit").show(0);
+	$("#btnOutputUpdate").hide(0);
+}
+function hideORshow2(){
+	$("#btnAssetSummit").show(0);
+	$("#btnAssetUpdate").hide(0);
+}
+function hideORshow3(){
+	$("#btnDebtSummit").show(0);
+	$("#btnDebtUpdate").hide(0);
 }
 /*查询tag对应的内容*/
 function findInputTagContent(number){
