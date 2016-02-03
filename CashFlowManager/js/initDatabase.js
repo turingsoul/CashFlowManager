@@ -126,7 +126,7 @@
                         }
                         /*将数据显示出来*/
                        for(var i=0;i<data.rows.length;i++){
-                       		$("#second").append("<tr ondblclick='otputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteOutputTr(this)'>x</td></tr>");
+                       		$("#second").append("<tr ondblclick='outputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteOutputTr(this)'>x</td></tr>");
                        }
                        /*getSum1();*/
                     }

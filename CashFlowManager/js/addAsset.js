@@ -97,3 +97,46 @@ function deleteAssetTr(e){
 		}
 }
 
+/*打开更新数据弹出框*/
+function assetUpdate(e){
+	$("#asset_add1").attr("readonly","readonly");
+	$("#asset_add1").addClass("text-get");
+	/*$("#input_addinput").attr("readOnly","true");*/
+	var $current = $(e);
+	var nodeName = $($current.find("td").get(0)).text();
+	var nodeValue = $($current.find("td").get(1)).text();
+	var AssetTag = 0;  //tag
+	var TagContent = ""; //tagcontent
+	/*根据名称查询flag*/
+	var db = getCurrentDb();
+		db.transaction(function (trans) {
+	            trans.executeSql("select AssetTag from AssetTable where AssetName = ?", [Base64.encode(nodeName)], function (ts, data) {
+    	        AssetTag = Base64.decode(data.rows[0].AssetTag);
+    	        TagContent = findAssetTagContent(AssetTag);
+    	        showSelect1(AssetTag,TagContent);
+    	        
+	            }, function (ts, message) {console.log(message)});
+         });
+	$("#asset_add1").val(nodeName);
+	$("#asset_add2").val(nodeValue);
+	$("#addAsset").show(500);
+	$("#btnAssetSummit").hide(0);
+	$("#btnAssetUpdate").show(0);
+	console.log(nodeName+nodeValue);
+}
+/*查询tag对应的内容*/
+function findAssetTagContent(number){
+	if(number ==1){
+		return "存款";
+	}else if(number ==2 ){
+		return "股票";
+	}else if(number ==3){
+		return "房产";
+	}else if(number ==4){
+		return "汽车";
+	}else if(number ==5){
+		return "债券";
+	}else if(number ==6){
+		return "期权";
+	}
+}

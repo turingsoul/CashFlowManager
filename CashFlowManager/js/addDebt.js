@@ -97,5 +97,38 @@ function deleteDebtTr(e){
 			deleteDebtData(toDeleteDate);
 		}
 }
-
-
+/*打开更新数据弹出框*/
+function debtUpdate(e){
+	$("#debt_add1").attr("readonly","readonly");
+	$("#debt_add1").addClass("text-get");
+	/*$("#input_addinput").attr("readOnly","true");*/
+	var $current = $(e);
+	var nodeName = $($current.find("td").get(0)).text();
+	var nodeValue = $($current.find("td").get(1)).text();
+	var DebtTag = 0;  //tag
+	var TagContent = ""; //tagcontent
+	/*根据名称查询flag*/
+	var db = getCurrentDb();
+		db.transaction(function (trans) {
+	            trans.executeSql("select DebtTag from DebtTable where DebtName = ?", [Base64.encode(nodeName)], function (ts, data) {
+    	        DebtTag = Base64.decode(data.rows[0].DebtTag);
+    	        TagContent = findDebtTagContent(DebtTag);
+    	        showSelect1(DebtTag,TagContent);
+    	        
+	            }, function (ts, message) {console.log(message)});
+         });
+	$("#debt_add1").val(nodeName);
+	$("#debt_add2").val(nodeValue);
+	$("#addDebt").show(500);
+	$("#btnDebtSummit").hide(0);
+	$("#btnDebtUpdate").show(0);
+	console.log(nodeName+nodeValue);
+}
+/*查询tag对应的内容*/
+function findDebtTagContent(number){
+	if(number ==1){
+		return "欠债";
+	}else if(number ==2 ){
+		return "贷款";
+	}
+}

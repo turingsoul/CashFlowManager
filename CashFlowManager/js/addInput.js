@@ -149,7 +149,7 @@ function inputUpdate(e){
     	        InputTag = Base64.decode(data.rows[0].InputTag);
     	        TagContent = findInputTagContent(InputTag);
     	        showSelect(InputTag,TagContent);
-    	        /**/
+    	        
 	            }, function (ts, message) {console.log(message)});
          });
 	$("#input_add1").val(nodeName);
@@ -204,4 +204,16 @@ function findInputTagContent(number){
 function showSelect(a,b){
 	$($("#select_input").find("input").get(0)).attr("value",a);
 	$($("#select_input").find("input").get(1)).attr("value",b);
+}
+function showSelect1(a,b){
+	$($("#select_output").find("input").get(0)).attr("value",a);
+	$($("#select_output").find("input").get(1)).attr("value",b);
+}
+function showSelect2(a,b){
+	$($("#select_asset").find("input").get(0)).attr("value",a);
+	$($("#select_asset").find("input").get(1)).attr("value",b);
+}
+function showSelect3(a,b){
+	$($("#select_debt").find("input").get(0)).attr("value",a);
+	$($("#select_debt").find("input").get(1)).attr("value",b);
 }

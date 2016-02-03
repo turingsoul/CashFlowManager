@@ -96,3 +96,54 @@ function deleteOutputTr(e){
 			deleteOutputData(toDeleteDate);
 		}
 }
+
+/*打开更新数据弹出框*/
+function outputUpdate(e){
+	$("#output_add1").attr("readonly","readonly");
+	
+	$("#output_add1").addClass("text-get");
+	/*$("#input_addinput").attr("readOnly","true");*/
+	var $current = $(e);
+	var nodeName = $($current.find("td").get(0)).text();
+	var nodeValue = $($current.find("td").get(1)).text();
+	var OutputTag = 0;  //tag
+	var TagContent = ""; //tagcontent
+	/*根据名称查询flag*/
+	var db = getCurrentDb();
+		db.transaction(function (trans) {
+	            trans.executeSql("select OutputTag from OutputTable where OutputName = ?", [Base64.encode(nodeName)], function (ts, data) {
+    	        OutputTag = Base64.decode(data.rows[0].OutputTag);
+    	        TagContent = findOutputTagContent(OutputTag);
+    	        showSelect1(OutputTag,TagContent);
+    	        
+	            }, function (ts, message) {console.log(message)});
+         });
+	$("#output_add1").val(nodeName);
+	$("#output_add2").val(nodeValue);
+	$("#addOutput").show(500);
+	$("#btnOutputSummit").hide(0);
+	$("#btnOutputUpdate").show(0);
+	console.log(nodeName+nodeValue);
+}
+/*查询tag对应的内容*/
+function findOutputTagContent(number){
+	if(number ==1){
+		return "衣服";
+	}else if(number ==2 ){
+		return "饮食";
+	}else if(number ==3){
+		return "住宿";
+	}else if(number ==4){
+		return "交通";
+	}else if(number ==5){
+		return "娱乐";
+	}else if(number ==6){
+		return "文化";
+	}else if(number ==7){
+		return "生活用品";
+	}else if(number ==8){
+		return "水电";
+	}else if(number == 9 ){
+		return "赡养";
+	}
+}
