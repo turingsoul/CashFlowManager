@@ -807,7 +807,7 @@ tr:hover{
 }
 #debtPlus{
 	position:absolute;
-	left:23%;
+	right:13px;
 	margin-left:24px;
 	padding-left:6px;
 	top:58%;

@@ -5,3 +5,5 @@ $("#assetPlus").on("click",function(){
 $("#btnAssetCancel").on("click",function(){
 	$("#addAsset").hide(500);
 })
+
+

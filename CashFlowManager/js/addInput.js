@@ -10,6 +10,7 @@ function init(){
 	$("#updata_Input").hide(0);
 	$("#addInput").hide(0);
 	$("#addAsset").hide(0);
+	$("#addDebt").hide(0);
 }
 
 /*点击添加按钮操作*/

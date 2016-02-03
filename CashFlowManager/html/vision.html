@@ -146,14 +146,15 @@
 				<input type="text" class = "output_addoutput" id="output_add2" placeholder="金额"/>
 				<div id="outputTips"></div>
 				<select id="select_output">
-					 <option value ="1">工资</option>
-					 <option value ="2">利息</option>
-					 <option value ="3">股息</option>
-					 <option value ="4">劳务报酬</option>
-					 <option value ="5">生意</option>
-					 <option value ="6">住房补贴</option>
-					 <option value ="7">单位缴公积金</option>
-					 <option value ="8">其他</option>
+					 <option value ="1">衣服</option>
+					 <option value ="2">饮食</option>
+					 <option value ="3">住宿</option>
+					 <option value ="4">交通</option>
+					 <option value ="5">娱乐</option>
+					 <option value ="6">文化</option>
+					 <option value ="7">生活用品</option>
+					 <option value ="8">水电</option>
+					 <option value ="9">赡养</option>
 				</select>
 				<div id="btnOutputUpdate" class="btnInput">确认修改</div>
 				<div id="btnOutputSummit" class="btnInput">确定</div>
@@ -212,14 +213,13 @@
 				<input type="text" class = "asset_addasset" id="asset_add2" placeholder="金额"/>
 				<div id="assetTips"></div>
 				<select id="select_asset">
-					 <option value ="1">工资</option>
-					 <option value ="2">利息</option>
-					 <option value ="3">股息</option>
-					 <option value ="4">劳务报酬</option>
-					 <option value ="5">生意</option>
-					 <option value ="6">住房补贴</option>
-					 <option value ="7">单位缴公积金</option>
-					 <option value ="8">其他</option>
+					 <option value ="1">存款</option>
+					 <option value ="2">股票</option>
+					 <option value ="3">房产</option>
+					 <option value ="4">汽车</option>
+					 <option value ="5">债券</option>
+					 <option value ="6">期权</option>
+					
 				</select>
 				<div id="btnAssetUpdate" class="btnAsset">确认修改</div>
 				<div id="btnAssetSummit" class="btnAsset">确定</div>
@@ -229,6 +229,7 @@
 	    <!--负债面板-->
 			<h4 id="debtListCaption">个人负债<br><font>outputList</font></h4>
 			<h4 id = "debtSum">2039802953</h4>	
+			<div id="debtPlus">添加</div>
 			<div id="debtBoard">
 			<table id="forth">
 				<tr><td>003</td><td>003</td></tr>
@@ -277,14 +278,9 @@
 				<input type="text" class = "debt_adddebt" id="debt_add2" placeholder="金额"/>
 				<div id="debtTips"></div>
 				<select id="select_debt">
-					 <option value ="1">工资</option>
-					 <option value ="2">利息</option>
-					 <option value ="3">股息</option>
-					 <option value ="4">劳务报酬</option>
-					 <option value ="5">生意</option>
-					 <option value ="6">住房补贴</option>
-					 <option value ="7">单位缴公积金</option>
-					 <option value ="8">其他</option>
+					 <option value ="1">欠债</option>
+					 <option value ="2">贷款</option>
+					
 				</select>
 				<div id="btnDebtUpdate" class="btnDebt">确认修改</div>
 				<div id="btnDebtSummit" class="btnDebt">确定</div>
@@ -300,6 +296,7 @@
 		<script src="../js/base64.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/addOutput.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/addAsset.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/addDebt.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function(){
 				$('#select_input').selectlist({
