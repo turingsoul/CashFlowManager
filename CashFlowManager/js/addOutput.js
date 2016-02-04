@@ -147,3 +147,22 @@ function findOutputTagContent(number){
 		return "赡养";
 	}
 }
+/*确认修改操作*/
+$("#btnOutputUpdate").on("click",function(){
+	var nodeName = $("#output_add1").val();
+	var nodeValue = $("#output_add2").val();
+	var tag = $("#select_output").find("input").get(0).value;//获得第一个input元素的value值
+	var timeNow = currentTime();
+	var db = getCurrentDb();
+		db.transaction(function (trans) {
+	            trans.executeSql(" update OutputTable set OutputValue = ?,OutputTag = ?,CurrentTime=? where OutputName = ?", [Base64.encode(nodeValue),Base64.encode(tag),Base64.encode(timeNow),Base64.encode(nodeName)], function (ts, data) {
+    	        $("#addOutput").hide(500);showAllTheData();
+    	         $("#output_add1").val("");
+    	        $("#output_add2").val("");
+	            }, function (ts, message) {
+	            	 $("#output_add1").val("");
+    	        	 $("#output_add2").val("");
+	            });
+         });
+	
+})

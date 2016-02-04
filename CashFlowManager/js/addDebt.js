@@ -132,3 +132,22 @@ function findDebtTagContent(number){
 		return "贷款";
 	}
 }
+/*确认修改操作*/
+$("#btnDebtUpdate").on("click",function(){
+	var nodeName = $("#debt_add1").val();
+	var nodeValue = $("#debt_add2").val();
+	var tag = $("#select_debt").find("input").get(0).value;//获得第一个input元素的value值
+	var timeNow = currentTime();
+	var db = getCurrentDb();
+		db.transaction(function (trans) {
+	            trans.executeSql(" update DebtTable set DebtValue = ?,DebtTag = ?,CurrentTime=? where DebtName = ?", [Base64.encode(nodeValue),Base64.encode(tag),Base64.encode(timeNow),Base64.encode(nodeName)], function (ts, data) {
+    	        $("#addDebt").hide(500);showAllTheData();
+    	         $("#debt_add1").val("");
+    	        $("#debt_add2").val("");
+	            }, function (ts, message) {
+	            	 $("#debt_add1").val("");
+    	        	 $("#debt_add2").val("");
+	            });
+         });
+	
+})

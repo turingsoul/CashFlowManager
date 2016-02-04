@@ -140,3 +140,22 @@ function findAssetTagContent(number){
 		return "期权";
 	}
 }
+/*确认修改操作*/
+$("#btnAssetUpdate").on("click",function(){
+	var nodeName = $("#asset_add1").val();
+	var nodeValue = $("#asset_add2").val();
+	var tag = $("#select_asset").find("input").get(0).value;//获得第一个input元素的value值
+	var timeNow = currentTime();
+	var db = getCurrentDb();
+		db.transaction(function (trans) {
+	            trans.executeSql(" update AssetTable set AssetValue = ?,AssetTag = ?,CurrentTime=? where AssetName = ?", [Base64.encode(nodeValue),Base64.encode(tag),Base64.encode(timeNow),Base64.encode(nodeName)], function (ts, data) {
+    	        $("#addAsset").hide(500);showAllTheData();
+    	         $("#asset_add1").val("");
+    	        $("#asset_add2").val("");
+	            }, function (ts, message) {
+	            	 $("#asset_add1").val("");
+    	        	 $("#asset_add2").val("");
+	            });
+         });
+	
+})

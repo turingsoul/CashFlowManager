@@ -7,10 +7,13 @@ $(function() {
 /*函数初始化*/
 function init(){
 	$("#addOutput").hide(0);
-	$("#updata_Input").hide(0);
 	$("#addInput").hide(0);
 	$("#addAsset").hide(0);
 	$("#addDebt").hide(0);
+	$("#updata_Input").hide(0);
+	$("#updata_Output").hide(0);
+	$("#updata_Asset").hide(0);
+	$("#updata_Debt").hide(0);
 }
 
 /*点击添加按钮操作over*/
@@ -48,6 +51,7 @@ $("#btnInputSummit").on("click",function(){
 })
 /*确认修改操作*/
 $("#btnInputUpdate").on("click",function(){
+	
 	var nodeName = $("#input_add1").val();
 	var nodeValue = $("#input_add2").val();
 	var tag = $("#select_input").find("input").get(0).value;//获得第一个input元素的value值
@@ -58,9 +62,13 @@ $("#btnInputUpdate").on("click",function(){
     	        $("#addInput").hide(500);showAllTheData();
     	         $("#input_add1").val("");
     	        $("#input_add2").val("");
+    	        $("#btnInputUpdate").hide(0);	
+					$("#btnAssetSummit").show(0);
+    	        
 	            }, function (ts, message) {
 	            	 $("#input_add1").val("");
     	        	 $("#input_add2").val("");
+    	        
 	            });
          });
 	
