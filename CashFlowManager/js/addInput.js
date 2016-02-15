@@ -257,10 +257,13 @@ function showInputSum() {
 					InputName[i] = data.rows.item(i).InputName;
 					InputValue[i] = data.rows.item(i).InputValue;
 					console.log(Base64.decode(InputName[i]), Base64.decode(InputValue[i]));
-					inputResult = inputResult + parseInt(Base64.decode(InputValue[i]));
+					inputResult = inputResult + parseFloat(Base64.decode(InputValue[i]));
 				}
-				console.log("综合" + inputResult);
-				$("#inputSum").text(inputResult);
+				console.log("shouru" + inputResult);
+				$("#inputSum").text(fmoney(inputResult, 2));
+				$("#inputSum").attr("result",inputResult);
+				
+				
 
 			}
 		}, function(ts, message) {

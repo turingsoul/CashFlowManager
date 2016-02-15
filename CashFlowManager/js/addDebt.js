@@ -169,12 +169,13 @@ function showDebtSum(){
                              DebtName[i] = data.rows.item(i).DebtName;
                              DebtValue[i] = data.rows.item(i).DebtValue;
                              console.log(Base64.decode(DebtName[i]),Base64.decode(DebtValue[i]));
-                             debtResult= debtResult+parseInt(Base64.decode(DebtValue[i]));
+                             debtResult= debtResult+parseFloat(Base64.decode(DebtValue[i]));
                         }
                         console.log("综合"+debtResult);
-                        $("#debtSum").text(debtResult);
-                        var assetMoney = $("#assetSum").text();
-					    var debtMoney = $("#debtSum").text();
+                        $("#debtSum").text(fmoney(debtResult, 2));
+                        $("#debtSum").attr("result",debtResult);
+                        var assetMoney = $("#assetSum").attr("result");
+					    var debtMoney = $("#debtSum").attr("result");
 					    var result = assetMoney - debtMoney;
 						$("#sumCash").text(fmoney(result, 2));
                       

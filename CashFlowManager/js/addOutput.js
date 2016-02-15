@@ -184,13 +184,15 @@ function showOutputSum(){
                              OutputName[i] = data.rows.item(i).OutputName;
                              OutputValue[i] = data.rows.item(i).OutputValue;
                              console.log(Base64.decode(OutputName[i]),Base64.decode(OutputValue[i]));
-                             outputResult= outputResult+parseInt(Base64.decode(OutputValue[i]));
+                             outputResult= outputResult+parseFloat(Base64.decode(OutputValue[i]));
                         }
                         console.log("综合"+outputResult);
-                        $("#outputSum").text(outputResult);
-                        var inputMoney = $("#inputSum").text();
-                        var outputMoney = $("#outputSum").text();
-                        showCashFlowSum(inputMoney-outputMoney);
+                        $("#outputSum").text(fmoney(outputResult, 2));
+                        $("#outputSum").attr("result",outputResult);
+                        var inputMoney = $("#inputSum").attr("result");
+                        var outputMoney = $("#outputSum").attr("result");
+                        var result = parseInt(inputMoney-outputMoney)
+                        showCashFlowSum(result);
                       
                     }
             }, function (ts, message) {console.log(message)});

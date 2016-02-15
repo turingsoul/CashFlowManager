@@ -177,10 +177,11 @@ function showAssetSum(){
                              AssetName[i] = data.rows.item(i).AssetName;
                              AssetValue[i] = data.rows.item(i).AssetValue;
                              console.log(Base64.decode(AssetName[i]),Base64.decode(AssetValue[i]));
-                             assetResult= assetResult+parseInt(Base64.decode(AssetValue[i]));
+                             assetResult= assetResult+parseFloat(Base64.decode(AssetValue[i]));
                         }
                         console.log("综合zica"+assetResult);
-                        $("#assetSum").text(assetResult);
+                        $("#assetSum").text(fmoney(assetResult, 2));
+                        $("#assetSum").attr("result",assetResult);
                        
                       
                     }
