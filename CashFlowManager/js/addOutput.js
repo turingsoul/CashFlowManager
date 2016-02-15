@@ -190,11 +190,16 @@ function showOutputSum(){
                         var inputMoney = $("#inputSum").attr("result");
                         var outputMoney = $("#outputSum").attr("result");
                         var result = parseInt(inputMoney-outputMoney)
-                        var num = outputMoney/inputMoney;
+                        var now = outputMoney/inputMoney;
+                        var before = $("#fillgauge").attr("result");
+                        if(before==undefined){
+                        	before=0;
+                        }
                         showCashFlowSum(result);
-                        if(num>0){
+                        if(now>0){
                         	$("#fillgauge").children().remove();
-                        	drawPercentage(num*100);	
+                        	drawPercentage(before*100,now*100);
+                        	$("#fillgauge").attr("result",now);
                         }
                     }
             }, function (ts, message) {console.log(message)});

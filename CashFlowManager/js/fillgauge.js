@@ -1,4 +1,4 @@
- function drawPercentage(num){
+ function drawPercentage(before,now){
  	
  	var config4 = liquidFillGaugeDefaultSettings();
     config4.circleThickness = 0.03;
@@ -15,9 +15,8 @@
     config4.waveOffset = 0.25;
     config4.textSize = 0.75;
     config4.waveCount = 3;
-    var gauge5 = loadLiquidFillGauge("fillgauge",0,config4);
-    gauge5.update(num);
+    var gauge5 = loadLiquidFillGauge("fillgauge",before,config4);
+    gauge5.update(now);
     
-   	
  }
  
