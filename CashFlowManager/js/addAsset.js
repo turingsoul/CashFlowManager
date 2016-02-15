@@ -87,14 +87,12 @@ function checkAssetRepeat(nodeName,nodeValue,tag,timeNow){
 }
 /*删除一行*/
 function deleteAssetTr(e){
-	if(confirm("确定删除此条内容")){
 			var $current = $(e);
 			$current.parent().remove();
 			/*获取这行的内容*/
 			var toDeleteDate = $($current.parent().find("td").get(0)).text();
 			/*数据库删除*/
 			deleteAssetData(toDeleteDate);
-		}
 }
 
 /*打开更新数据弹出框*/
