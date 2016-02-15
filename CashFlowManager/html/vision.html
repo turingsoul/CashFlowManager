@@ -25,12 +25,12 @@
 			<font id="totalAsset">总金额:</font>
 			<font id="sumCash">34981.938</font>
 			<font id="passiveCashFlow">被动月收入：</font>
-			<font id = "passiveCash">89234.93</font>
+			<font id = "passiveCash"></font>
 		</div>
 		<div id="changbg"></div>  <!--换肤拉杆-->
 		<!--收入面板-->
 		<h4 id="inputListCaption">月收入<br><font>INPUTLIST<font></h4>
-		<h4 id="inputSum">293</h4>
+		<h4 id="inputSum"></h4>
 		<div id="inputPlus">添加</div>
 		<div id="inputBoard">
 			<table id="first">
@@ -97,7 +97,7 @@
 		
 		<!--支出面板-->
 			<h4 id="outputListCaption">月支出<br><font>OUTPUTLIST</font></h4>
-			<h4 id = "outputSum">2039802953</h4>	
+			<h4 id = "outputSum"></h4>	
 			<div id="outputPlus">添加</div>
 			<div id="outputBoard">
 			<table id="second">
@@ -165,7 +165,7 @@
 			
 		<!--资产面板-->
 		    <h4 id="assetListCaption">个人资产<br><font>ASSETLIST</font></h4>
-			<h4 id = "assetSum">2039</h4>	
+			<h4 id = "assetSum"></h4>	
 			<div id="assetPlus">添加</div>
 			<div id="assetBoard">
 			<table id="third">
@@ -230,7 +230,7 @@
 			
 	    <!--负债面板-->
 			<h4 id="debtListCaption">个人负债<br><font>DEBTLIST</font></h4>
-			<h4 id = "debtSum">203</h4>	
+			<h4 id = "debtSum"></h4>	
 			<div id="debtPlus">添加</div>
 			<div id="debtBoard">
 			<table id="forth">
@@ -288,7 +288,13 @@
 				<div id="btnDebtSummit" class="btnDebt">确定</div>
 				<div id="btnDebtCancel" class="btnDebt">取消</div>
 			</div>
-		
+		<!--显示收支比例-->
+			
+			<svg id="fillgauge" width="19%" height="200");"></svg>
+			<div id="fillgaugeTip">
+				收支比例
+			</div>
+			
 		<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/changebkg.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/calculate.js" type="text/javascript" charset="utf-8"></script>
@@ -299,6 +305,9 @@
 		<script src="../js/addOutput.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/addAsset.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/addDebt.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/liquidFillGauge.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fillgauge.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function(){
 				$('#select_input').selectlist({

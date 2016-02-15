@@ -190,8 +190,12 @@ function showOutputSum(){
                         var inputMoney = $("#inputSum").attr("result");
                         var outputMoney = $("#outputSum").attr("result");
                         var result = parseInt(inputMoney-outputMoney)
+                        var num = outputMoney/inputMoney;
                         showCashFlowSum(result);
-                      
+                        if(num>0){
+                        	$("#fillgauge").children().remove();
+                        	drawPercentage(num*100);	
+                        }
                     }
             }, function (ts, message) {console.log(message)});
      });

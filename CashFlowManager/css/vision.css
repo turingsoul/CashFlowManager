@@ -243,6 +243,7 @@ body{
 }
 /*收入面板添加数据*/
 #addInput{
+	z-index: 10;
 	position: absolute;
 	left:50%;
 	margin-left:-250px;
@@ -446,6 +447,7 @@ tr:hover{
 	margin-left: 30px;
 }
 #addOutput{
+	z-index: 10;
 	position: absolute;
 	left:50%;
 	margin-left:-250px;
@@ -602,6 +604,7 @@ tr:hover{
 	margin-left: 30px;
 }
 #addAsset{
+	z-index: 10;
 	position: absolute;
 	left:50%;
 	margin-left:-250px;
@@ -769,6 +772,7 @@ tr:hover{
 	margin-left: 30px;
 }
 #addDebt{
+	z-index: 10;
 	position: absolute;
 	left:50%;
 	margin-left:-250px;
@@ -854,4 +858,22 @@ tr:hover{
 	left:50%;
 	line-height: 30px;
 	border-radius: 10px;
+}
+/*显示收支百分比*/
+#fillgauge{
+	position:absolute;
+	width:200px;
+	height:200px;
+	left:50%;
+	margin-left:-250px;
+	margin-top:220px;
+}
+#fillgaugeTip{
+	position: absolute;
+	height:20px;
+	left:50%;
+	margin-left:-180px;
+	text-align: center;
+	margin-top: 430px;
+	color:white;
 }
