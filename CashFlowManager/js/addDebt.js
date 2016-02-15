@@ -173,7 +173,10 @@ function showDebtSum(){
                         }
                         console.log("综合"+debtResult);
                         $("#debtSum").text(debtResult);
-                        
+                        var assetMoney = $("#assetSum").text();
+					    var debtMoney = $("#debtSum").text();
+					    var result = assetMoney - debtMoney;
+						$("#sumCash").text(fmoney(result, 2));
                       
                     }
             }, function (ts, message) {console.log(message)});

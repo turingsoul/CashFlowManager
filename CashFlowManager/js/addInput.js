@@ -2,7 +2,7 @@
 $(function() {
 	init();
 	showAllTheData();
-
+	
 });
 /*函数初始化*/
 function init() {

@@ -89,6 +89,7 @@
 	 */
 	  function showAllTheData() {
 	  		showAllTheSum();
+	  		
 	  	    /*清空各个表格内的行元素*/
             $("#first tr").detach();
             $("#second tr").detach();
@@ -172,6 +173,7 @@
                     
                 }, function(ts, message) {initDebtTable();});
             });
+            
         }
 	  
 	  /*删除收入表指定信息*/
