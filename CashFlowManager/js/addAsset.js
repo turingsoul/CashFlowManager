@@ -159,3 +159,32 @@ $("#btnAssetUpdate").on("click",function(){
          });
 	
 })
+/*显示个人资产总数*/
+function showAssetSum(){
+	var db = getCurrentDb();
+	db.transaction(function (trans) {
+            trans.executeSql("select * from AssetTable ", [], function (ts, data) {
+            	console.log(data);
+            	/*show items length*/
+            	var a  = data.rows.length;
+            	var AssetName  = new Array(data.rows.length);
+            	var AssetValue  = new Array(data.rows.length);
+            	/*get output sum*/
+            	var assetResult = 0;
+            	if (data){
+                        for (var i = 0; i < a; i++) {
+                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
+                             AssetName[i] = data.rows.item(i).AssetName;
+                             AssetValue[i] = data.rows.item(i).AssetValue;
+                             console.log(Base64.decode(AssetName[i]),Base64.decode(AssetValue[i]));
+                             assetResult= assetResult+parseInt(Base64.decode(AssetValue[i]));
+                        }
+                        console.log("综合zica"+assetResult);
+                        $("#assetSum").text(assetResult);
+                       
+                      
+                    }
+            }, function (ts, message) {console.log(message)});
+     });
+	
+}

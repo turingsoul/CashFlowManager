@@ -541,9 +541,13 @@ tr:hover{
 	letter-spacing: 4px;
 }
 #assetSum{
+	border:solid 1px red;
+	border-width: 1px 10px 0px 10px;
 	position: absolute;
 	left:12%;
 	top:58%;
+	width:150px;
+	text-align: center;
 	margin-top:-35px;
 	font-size: 23px;
 	color:#FFA500;
@@ -705,9 +709,13 @@ tr:hover{
 	letter-spacing: 4px;
 }
 #debtSum{
+	border:solid 1px red;
+	border-width: 1px 10px 0px 10px;
 	position: absolute;
 	right:15%;
 	top:58%;
+	width:150px;
+	text-align: center;
 	margin-top:-35px;
 	font-size: 23px;
 	color:#FFA500;

@@ -151,3 +151,32 @@ $("#btnDebtUpdate").on("click",function(){
          });
 	
 })
+/*显示个人负债总数*/
+function showDebtSum(){
+	var db = getCurrentDb();
+	db.transaction(function (trans) {
+            trans.executeSql("select * from DebtTable ", [], function (ts, data) {
+            	console.log(data);
+            	/*show items length*/
+            	var a  = data.rows.length;
+            	var DebtName  = new Array(data.rows.length);
+            	var DebtValue  = new Array(data.rows.length);
+            	/*get output sum*/
+            	var debtResult = 0;
+            	if (data){
+                        for (var i = 0; i < a; i++) {
+                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
+                             DebtName[i] = data.rows.item(i).DebtName;
+                             DebtValue[i] = data.rows.item(i).DebtValue;
+                             console.log(Base64.decode(DebtName[i]),Base64.decode(DebtValue[i]));
+                             debtResult= debtResult+parseInt(Base64.decode(DebtValue[i]));
+                        }
+                        console.log("综合"+debtResult);
+                        $("#debtSum").text(debtResult);
+                        
+                      
+                    }
+            }, function (ts, message) {console.log(message)});
+     });
+	
+}
