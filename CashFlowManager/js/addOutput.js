@@ -166,3 +166,34 @@ $("#btnOutputUpdate").on("click",function(){
          });
 	
 })
+/*显示支出总数*/
+function showOutputSum(){
+	var db = getCurrentDb();
+	db.transaction(function (trans) {
+            trans.executeSql("select * from OutputTable ", [], function (ts, data) {
+            	console.log(data);
+            	/*show items length*/
+            	var a  = data.rows.length;
+            	var OutputName  = new Array(data.rows.length);
+            	var OutputValue  = new Array(data.rows.length);
+            	/*get output sum*/
+            	var outputResult = 0;
+            	if (data){
+                        for (var i = 0; i < a; i++) {
+                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
+                             OutputName[i] = data.rows.item(i).OutputName;
+                             OutputValue[i] = data.rows.item(i).OutputValue;
+                             console.log(Base64.decode(OutputName[i]),Base64.decode(OutputValue[i]));
+                             outputResult= outputResult+parseInt(Base64.decode(OutputValue[i]));
+                        }
+                        console.log("综合"+outputResult);
+                        $("#outputSum").text(outputResult);
+                        var inputMoney = $("#inputSum").text();
+                        var outputMoney = $("#outputSum").text();
+                        showCashFlowSum(inputMoney-outputMoney);
+                      
+                    }
+            }, function (ts, message) {console.log(message)});
+     });
+	
+}

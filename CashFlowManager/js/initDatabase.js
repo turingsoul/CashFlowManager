@@ -88,6 +88,7 @@
 	 * 读取数据库中的信息
 	 */
 	  function showAllTheData() {
+	  		showAllTheSum();
 	  	    /*清空各个表格内的行元素*/
             $("#first tr").detach();
             $("#second tr").detach();

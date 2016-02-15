@@ -2,7 +2,7 @@
 $(function() {
 	init();
 	showAllTheData();
-
+	
 });
 /*函数初始化*/
 function init(){
@@ -224,4 +224,36 @@ function showSelect2(a,b){
 function showSelect3(a,b){
 	$($("#select_debt").find("input").get(0)).attr("value",a);
 	$($("#select_debt").find("input").get(1)).attr("value",b);
+}
+/*显示金额总数*/
+function showAllTheSum(){
+	showInputSum();
+	showOutputSum();
+}
+/*显示收入总数*/
+function showInputSum(){
+	var db = getCurrentDb();
+	db.transaction(function (trans) {
+            trans.executeSql("select * from InputTable ", [], function (ts, data) {
+            	console.log(data);
+            	/*show items length*/
+            	var a  = data.rows.length;
+            	var InputName  = new Array(data.rows.length);
+            	var InputValue  = new Array(data.rows.length);
+            	/*get input sum*/
+            	var inputResult = 0;
+            	if (data){
+                        for (var i = 0; i < a; i++) {
+                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
+                             InputName[i] = data.rows.item(i).InputName;
+                             InputValue[i] = data.rows.item(i).InputValue;
+                             console.log(Base64.decode(InputName[i]),Base64.decode(InputValue[i]));
+                             inputResult= inputResult+parseInt(Base64.decode(InputValue[i]));
+                        }
+                        console.log("综合"+inputResult);
+                        $("#inputSum").text(inputResult);
+                      
+                    }
+            }, function (ts, message) {console.log(message)});
+     });
 }

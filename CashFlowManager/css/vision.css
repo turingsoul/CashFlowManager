@@ -228,8 +228,12 @@ body{
 	letter-spacing: 4px;
 }
 #inputSum{
+	border:solid 1px red;
+	border-width: 1px 10px 0px 10px;
 	position: absolute;
 	left:12%;
+	width:150px;
+	text-align: center;
 	top:65px;
 	font-size: 23px;
 	color:#FFA500;
@@ -382,7 +386,11 @@ tr:hover{
 	letter-spacing: 4px;
 }
 #outputSum{
+	border:solid 1px red;
+	border-width: 1px 10px 0px 10px;
 	position: absolute;
+	width:150px;
+	text-align: center;
 	right:15%;
 	top:45px;
 	margin-top:22px;
