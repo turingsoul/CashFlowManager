@@ -181,6 +181,7 @@ function showAssetSum(){
                         $("#assetSum").text(fmoney(assetResult, 2));
                         $("#assetSum").attr("result",assetResult);
                         showCakeChart();
+                        
                       
                     }
             }, function (ts, message) {console.log(message)});
