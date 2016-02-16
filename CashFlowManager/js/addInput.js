@@ -65,7 +65,6 @@ $("#btnInputUpdate").on("click", function() {
 				$("#input_add2").val("");
 				$("#btnInputUpdate").hide(0);
 				$("#btnAssetSummit").show(0);
-
 			}, function(ts, message) {
 				$("#input_add1").val("");
 				$("#input_add2").val("");

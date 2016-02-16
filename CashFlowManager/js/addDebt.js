@@ -111,7 +111,7 @@ function debtUpdate(e){
 	            trans.executeSql("select DebtTag from DebtTable where DebtName = ?", [Base64.encode(nodeName)], function (ts, data) {
     	        DebtTag = Base64.decode(data.rows[0].DebtTag);
     	        TagContent = findDebtTagContent(DebtTag);
-    	        showSelect1(DebtTag,TagContent);
+    	        showSelect3(DebtTag,TagContent);
     	        
 	            }, function (ts, message) {console.log(message)});
          });

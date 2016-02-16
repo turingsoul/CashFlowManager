@@ -111,7 +111,7 @@ function assetUpdate(e){
 	            trans.executeSql("select AssetTag from AssetTable where AssetName = ?", [Base64.encode(nodeName)], function (ts, data) {
     	        AssetTag = Base64.decode(data.rows[0].AssetTag);
     	        TagContent = findAssetTagContent(AssetTag);
-    	        showSelect1(AssetTag,TagContent);
+    	        showSelect2(AssetTag,TagContent);
     	        
 	            }, function (ts, message) {console.log(message)});
          });
