@@ -20,7 +20,18 @@
 		<script type="text/javascript">
 			initUserTable();/* init database and user table if not exist then create them*/
 			showAllTheData();
-			
+			$.ajax({
+				url: '/asd',
+				type:"post",
+				data:{a:1,b:2},
+				dataType:"JSON",
+				success:function(response){
+					console.log(response);
+				},
+				error:function(response){
+					console.error(response);
+				}
+			});
 		</script>
 	</body>
 </html>

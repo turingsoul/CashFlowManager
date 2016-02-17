@@ -1,16 +1,16 @@
-﻿var http = require('http');
+﻿var express = require('express');
+var serveStatic = require('serve-static');
+var bodyParser = require('body-parser');
 
-http.createServer(function (request, response) {
+var app = express();
 
-	// 发送 HTTP 头部 
-	// HTTP 状态值: 200 : OK
-	// 内容类型: text/plain
-	response.writeHead(200, {'Content-Type': 'text/html'});
+app.use(serveStatic('./', {'index': ['index.html']}));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
-	// 发送响应数据 "Hello World"
-	 response.write('<script type="text/javascript">window.location.href="index.html"</script>');
-	
-}).listen(8888);
+app.post('/asd', function(req, res){
+   console.log(req.body);
+   res.send('hello world');
+});
 
-// 终端打印如下信息
-console.log('Server running at http://127.0.0.1:8888/');
+app.listen(8081);
