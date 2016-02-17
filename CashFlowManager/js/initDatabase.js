@@ -90,6 +90,7 @@
 	  function showAllTheData() {
 	  		showAllTheSum();
 	  		drawUrgent();
+	  		showPassiveCash();
 	  	    /*清空各个表格内的行元素*/
             $("#first tr").detach();
             $("#second tr").detach();
