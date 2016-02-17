@@ -75,9 +75,44 @@ function showCashSum(){
 	
 }
 function showPassiveCash(){
-	$("#passiveCash").text(fmoney("21411.33", 2));
+	/*计算被动金额*/
+	var one = Base64.encode("1");
+	var two = Base64.encode("2");
+	var three = Base64.encode("3");
+	var four = Base64.encode("4");
+	var five = Base64.encode("5");
+	var six = Base64.encode("6");
+	var seven = Base64.encode("7");
+	var eight = Base64.encode("8");
+	var nine = Base64.encode("9");
+	var ten = Base64.encode("10");
+	var eleven = Base64.encode("11");
+	var twelve = Base64.encode("12");
+	var assetResult = 0;
+	var db = getCurrentDb();
+	 db.transaction(function (trans) {
+	        trans.executeSql("select * from InputTable where InputTag = ? or InputTag = ? or InputTag = ? or InputTag = ? or InputTag = ?", [two,three,nine,ten,eleven], function (ts, data) {
+	        	
+	        	var a  = data.rows.length;
+	        	var InputName  = new Array(data.rows.length);
+	        	var InputValue  = new Array(data.rows.length);
+	        	
+	        	if (data){
+	                    for (var i = 0; i < a; i++) {
+	                        /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
+	                         InputName[i] = data.rows.item(i).InputName;
+	                         InputValue[i] = data.rows.item(i).InputValue;
+	                         assetResult= assetResult+parseFloat(Base64.decode(InputValue[i]));
+	                    }
+	                    console.log("存款3:"+assetResult);
+	                    $("#passiveCash").text(fmoney(assetResult, 2));
+	                  
+	                }
+	        }, function (ts, message) {console.log(message)});
+	        
+	 });
+	
 }
-
 
 showPassiveCash();
 

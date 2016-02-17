@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/asd', function(req, res){
    console.log(req.body);
-   res.send('hello world');
+   res.status(200);
+   res.send('接收成功');
+   
 });
 
 app.listen(8081);
