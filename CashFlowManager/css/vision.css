@@ -5,8 +5,7 @@
 body{
 	background-image:url(../img/background2.jpg);
 	background-repeat: no-repeat;
-	background-size:auto ;
-	
+	background-size:auto;
 }
 
 #changbg{
@@ -906,4 +905,39 @@ tr:hover{
 	left:50%;
 	margin-left:-2em;
 	margin-top:600px;
+}
+#headline{
+	text-align: center;
+}
+#five{
+	/*position: absolute;
+	left: 0px;
+	top:0px;
+	background:rgba(0,0,0,0);
+	font-size: 0px;
+	color:red;*/
+	color:white;
+	border:solid 1px white;
+	display: none;
+}
+#five td{
+	border:solid 1px white;
+}
+#exportFourTable{
+	position:absolute;
+	
+}
+#downloadchart{
+	position: absolute;
+	right:0px;
+	z-index: 10;
+	width:80px;
+	height:30px;	
+	line-height: 30px;
+	font-family: "微软雅黑";
+	text-align: center;
+	background:#7D2316;
+	color:white;
+	text-decoration: none;
+	
 }

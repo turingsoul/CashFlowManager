@@ -190,12 +190,15 @@ function showOutputSum(){
                         var inputMoney = $("#inputSum").attr("result");
                         var outputMoney = $("#outputSum").attr("result");
                         var result = parseInt(inputMoney-outputMoney)
+                       
                         var now = outputMoney/inputMoney;
                         var before = $("#fillgauge").attr("result");
                         if(before==undefined){
                         	before=0;
                         }
                         showCashFlowSum(result);
+                         /*现金流添加到表格5中*/
+                       $("#displaycashflow").text("现金流:"+result);    
                         if(now>0){
                         	$("#fillgauge").children().remove();
                         	drawPercentage(before*100,now*100);

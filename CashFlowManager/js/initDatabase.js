@@ -91,6 +91,7 @@
 	  		showAllTheSum();
 	  		drawUrgent();
 	  		showPassiveCash();
+	  		
 	  	    /*清空各个表格内的行元素*/
             $("#first tr").detach();
             $("#second tr").detach();
@@ -115,66 +116,73 @@
                        /*getSum1();*/
                     }
                     
+                    
+                    /*第二层*/
+				                     db.transaction(function (trans) {
+				                trans.executeSql("select * from OutputTable ", [], function (ts, data) {
+				                	var a  = new Array(data.rows.length);
+				                	var b = new Array(data.rows.length);
+				                    if (data){
+				                        for (var i = 0; i < data.rows.length; i++) {
+				                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
+				                             a[i] = data.rows.item(i).OutputName;
+				                             b[i] = data.rows.item(i).OutputValue;
+				                        }
+				                        /*将数据显示出来*/
+				                       for(var i=0;i<data.rows.length;i++){
+				                       		$("#second").append("<tr ondblclick='outputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteOutputTr(this)'>x</td></tr>");
+				                       }
+				                       /*getSum1();*/
+				                    }
+				                        /*第三层*/
+											db.transaction(function (trans) {
+							                trans.executeSql("select * from AssetTable ", [], function (ts, data) {
+							                	var a  = new Array(data.rows.length);
+							                	var b = new Array(data.rows.length);
+							                    if (data){
+							                        for (var i = 0; i < data.rows.length; i++) {
+							                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
+							                             a[i] = data.rows.item(i).AssetName;
+							                             b[i] = data.rows.item(i).AssetValue;
+							                        }
+							                        /*将数据显示出来*/
+							                       for(var i=0;i<data.rows.length;i++){
+							                       		$("#third").append("<tr ondblclick='assetUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteAssetTr(this)'>x</td></tr>");
+							                       }
+							                       /*getSum1();*/
+							                    }
+							                      /*第四层*/
+														db.transaction(function (trans) {
+										                trans.executeSql("select * from DebtTable ", [], function (ts, data) {
+										                	var a  = new Array(data.rows.length);
+										                	var b = new Array(data.rows.length);
+										                    if (data){
+										                        for (var i = 0; i < data.rows.length; i++) {
+										                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
+										                             a[i] = data.rows.item(i).DebtName;
+										                             b[i] = data.rows.item(i).DebtValue;
+										                        }
+										                        /*将数据显示出来*/
+										                       for(var i=0;i<data.rows.length;i++){
+										                       		$("#forth").append("<tr ondblclick='debtUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteDebtTr(this)'>x</td></tr>");
+										                       }
+										                       /*getSum1();*/
+										                    }
+										                    /*调用下载准备*/
+										                     prepareDownload();
+										                }, function(ts, message) {initDebtTable();});
+										            });
+							                }, function(ts, message) {initAssetTable();});
+							            });
+				                }, function(ts, message) {initOutputTable();});
+				            });
+                    
                 }, function(ts, message) {initInputTable();});
             });
-            db.transaction(function (trans) {
-                trans.executeSql("select * from OutputTable ", [], function (ts, data) {
-                	var a  = new Array(data.rows.length);
-                	var b = new Array(data.rows.length);
-                    if (data){
-                        for (var i = 0; i < data.rows.length; i++) {
-                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
-                             a[i] = data.rows.item(i).OutputName;
-                             b[i] = data.rows.item(i).OutputValue;
-                        }
-                        /*将数据显示出来*/
-                       for(var i=0;i<data.rows.length;i++){
-                       		$("#second").append("<tr ondblclick='outputUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteOutputTr(this)'>x</td></tr>");
-                       }
-                       /*getSum1();*/
-                    }
-                    
-                }, function(ts, message) {initOutputTable();});
-            });
-            db.transaction(function (trans) {
-                trans.executeSql("select * from AssetTable ", [], function (ts, data) {
-                	var a  = new Array(data.rows.length);
-                	var b = new Array(data.rows.length);
-                    if (data){
-                        for (var i = 0; i < data.rows.length; i++) {
-                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
-                             a[i] = data.rows.item(i).AssetName;
-                             b[i] = data.rows.item(i).AssetValue;
-                        }
-                        /*将数据显示出来*/
-                       for(var i=0;i<data.rows.length;i++){
-                       		$("#third").append("<tr ondblclick='assetUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteAssetTr(this)'>x</td></tr>");
-                       }
-                       /*getSum1();*/
-                    }
-                    
-                }, function(ts, message) {initAssetTable();});
-            });
-            db.transaction(function (trans) {
-                trans.executeSql("select * from DebtTable ", [], function (ts, data) {
-                	var a  = new Array(data.rows.length);
-                	var b = new Array(data.rows.length);
-                    if (data){
-                        for (var i = 0; i < data.rows.length; i++) {
-                            /*appendDataToTable(data.rows.item(i));//获取某行数据的json对象*/
-                             a[i] = data.rows.item(i).DebtName;
-                             b[i] = data.rows.item(i).DebtValue;
-                        }
-                        /*将数据显示出来*/
-                       for(var i=0;i<data.rows.length;i++){
-                       		$("#forth").append("<tr ondblclick='debtUpdate(this)'><td>"+Base64.decode(a[i])+"</td><td>"+Base64.decode(b[i])+"</td><td class='delete' onclick='deleteDebtTr(this)'>x</td></tr>");
-                       }
-                       /*getSum1();*/
-                    }
-                    
-                }, function(ts, message) {initDebtTable();});
-            });
-           
+          
+          
+          
+           	
         }
 	  
 	  /*删除收入表指定信息*/
@@ -227,6 +235,33 @@
 	     return str;
 	}
 	
-	
+	/*准备下载*/
+	function prepareDownload(){
+		
+		$("#copyfirst").children().remove();
+		var a = $("#first").children().clone();//添加表格一数据的同时复制dom元素
+		$("#copyfirst").append(a);
+		$("#copyfirst .delete").remove();
+		
+		$("#copysecond").children().remove();
+		$("#copysecond").append($("#second").children().clone());
+		$("#copysecond .delete").remove();
+		
+		$("#copythird").children().remove();
+		$("#copythird").append($("#third").children().clone());
+		$("#copythird .delete").remove();
+		
+		$("#copyfourth").children().remove();
+		$("#copyfourth").append($("#forth").children().clone());
+		$("#copyfourth .delete").remove();
+		
+		$("#displayone").text(" 固定月收入:"+$("#inputSum").text());
+		$("#displaytwo").text(" 固定月支出:"+$("#outputSum").text());
+		$("#displaythird").text(" 个人资产:"+$("#assetSum").text());
+		$("#displayfourth").text(" 个人负债:"+$("#debtSum").text());
+		
+		$("#displaytotal").text("净资产:"+$("#sumCash").text());
+		$("#displaypassive").text("被动收入:"+$("#passiveCash").text());
+	}
 	
 	

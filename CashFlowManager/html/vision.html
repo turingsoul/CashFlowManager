@@ -8,7 +8,109 @@
 		
 	</head>
 	<body>
-		<!--<button onclick="exportChart();">导出报表</button>-->
+		<table id="five">
+			<!--标题-->
+			<tr>
+				<td colspan="4" id="headline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现金流&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>	
+			</tr>
+			<tr>
+				<td id="displaycashflow"></td>
+				<td id="displaytotal"></td>
+				<td id="displaypassive"></td>
+			</tr>
+			<tr></tr>
+			<tr>
+				<td id="displayone">&nbsp;收入：23987123&nbsp;&nbsp;</td>
+				<td id="displaytwo">&nbsp;支出：198740&nbsp;&nbsp;</td>
+				<td id="displaythird">&nbsp;资产：289374234&nbsp;&nbsp;</td>
+				<td id="displayfourth">&nbsp;负债：800&nbsp;&nbsp;</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<table id="copyfirst">
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>	
+					</table>
+					
+				</td>
+				<td>
+					<table id="copysecond">
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>	
+					</table>
+					
+				</td>
+				<td>
+					<table id="copythird">
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+							<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
+					</table>
+					
+				</td>
+				<td>
+					<table id="copyfourth">
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>
+						<tr><td>003</td><td>003</td></tr>	
+					</table>
+					
+				</td>
+			</tr>
+		
+		</table>
+		<a id="downloadchart" 
+	download="个人理财表.xls"
+    href="#"
+    id="exportFourTable"
+    onclick="return ExcellentExport.excel(this, 'five', 'five');">
+        导出报表</a>
 		<!--显示屏-->
 		<div id="caption">
 			<font id="bigCaption"></font>
@@ -328,6 +430,7 @@
 		<script src="../js/cakeChart.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/Donut3D.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/export.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/excellentexport.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function(){
 				$('#select_input').selectlist({
@@ -363,6 +466,11 @@
            			triangleColor: '#cd992f'  //右侧小三角颜色
 				});
 			})
+			function good(){
+				alert("cao");
+				
+				
+			}
 		</script>
 		
 	</body>
