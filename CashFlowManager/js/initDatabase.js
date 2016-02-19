@@ -170,6 +170,8 @@
 										                    }
 										                    /*调用下载准备*/
 										                     prepareDownload();
+										                     /*显示饼图*/
+										                     showCakeChart();
 										                }, function(ts, message) {initDebtTable();});
 										            });
 							                }, function(ts, message) {initAssetTable();});

@@ -75,7 +75,7 @@
 						<tr><td>1111111103</td><td>003</td></tr>
 						<tr><td>1111111103</td><td>003</td></tr>
 						<tr><td>1111111103</td><td>003</td></tr>
-							<tr><td>1111111103</td><td>003</td></tr>
+						<tr><td>1111111103</td><td>003</td></tr>
 						<tr><td>1111111103</td><td>003</td></tr>
 						<tr><td>1111111103</td><td>003</td></tr>
 						<tr><td>1111111103</td><td>003</td></tr>
@@ -105,13 +105,30 @@
 			</tr>
 		
 		</table>
+		<!--导出报表-->
 		<a id="downloadchart" 
-	download="个人理财表.xls"
-    href="#"
-    id="exportFourTable"
-    onclick="return ExcellentExport.excel(this, 'five', 'five');">
-        导出报表</a>
+			download="个人理财表.xls"
+		    href="#"
+		    id="exportFourTable"
+		    onclick="return ExcellentExport.excel(this, 'five', 'five');">
+		        导出报表</a>
+		<!--增加消费-->
+		<a  id="addConsume" onclick="addConsume();">新增消费</a>
+		<!--新增收入-->
+		<a  id="addMoney" onclick="addMoney();">新增收入</a>
 		<!--显示屏-->
+		<!--新增消费面板-->
+		<div id="addConsumeBoard">
+			<input type="text" class = "input_addinput" id="consume_add1" placeholder="消费项" />
+			<input type="text" class = "input_addinput" id="consume_add2" placeholder="金额"/>
+			<div id="consumeTips"></div>
+			<select name="" id="consumeSelector">
+				
+			</select>
+			<div id="consumeCheck" class="btnInput">确定</div>
+			<div id="consumeCancel" class="btnInput">取消</div>
+		</div>
+		
 		<div id="caption">
 			<font id="bigCaption"></font>
 			<font class="cashflow" id="cashflow1">0</font>
@@ -431,6 +448,7 @@
 		<script src="../js/Donut3D.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/export.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/excellentexport.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/flowacount.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function(){
 				$('#select_input').selectlist({
@@ -458,6 +476,14 @@
            			triangleColor: '#cd992f'  //右侧小三角颜色
 				});
 				$('#select_debt').selectlist({
+					zIndex: 11,
+					width: 400,
+					height: 30,
+					showMaxHeight:250,
+					triangleSize: 6,   //右侧小三角大小
+           			triangleColor: '#cd992f'  //右侧小三角颜色
+				});
+				$('#consumeSelector').selectlist({
 					zIndex: 11,
 					width: 400,
 					height: 30,

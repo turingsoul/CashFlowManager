@@ -100,14 +100,17 @@ function drawCake(one,two,three){
 	{label:"固定资产", color:"#FF9900",value:three}
     ];
     
-	var svg = d3.select("#mybox").select("svg");
+	/*var svg = d3.select("#mybox").select("svg");*/
+	 
+	
+	
 	
 	if(flag==0){
-		Donut3D.draw("investPercent", getnowData(), 100,100,70,70, 20, 0.4);//最后参数为环形大小	
+		Donut3D.draw("investPercent", getnowData(), 100,100,85,80, 20, 0.4);//最后参数为环形大小	
 		flag=1;
 	}
 	else{
-		Donut3D.draw("investPercent", getforeData(), 100,100,70,70, 20, 0.4);//最后参数为环形大小
+		Donut3D.draw("investPercent", getforeData(), 100,100,85,80, 20, 0.4);//最后参数为环形大小
 	}
 	
 	Donut3D.transition("investPercent", getnowData(),85, 80, 15, 0.4);

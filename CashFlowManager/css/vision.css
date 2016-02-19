@@ -941,3 +941,89 @@ tr:hover{
 	text-decoration: none;
 	
 }
+/*新增消费*/
+#addConsume{
+	position: absolute;
+	right:80px;
+	z-index: 10;
+	width:80px;
+	height:30px;	
+	line-height: 30px;
+	font-family: "微软雅黑";
+	text-align: center;
+	background:#7D2316;
+	color:white;
+	text-decoration: none;
+	border-right: 1px solid white;
+	cursor: pointer;
+}
+/*选择消费项目*/
+#consumeSelector{
+	position: absolute;	
+	background-color: mediumpurple;
+	top:80px;
+	color:black;
+	left:50%;
+	margin-left:-200px;
+	
+	background:url(../img/inputbkg.png);
+	border: none;
+	border-top: 1px solid #9370DB;
+	border-bottom: 1px solid #9370DB;
+	text-align: center;
+}
+
+#addConsumeBoard{
+	z-index: 10;
+	position: absolute;
+	left:50%;
+	margin-left:-250px;
+	top:50%;
+	margin-top:-100px;
+	width:500px;
+	height:200px;
+	background:rgba(0,0,0,0.5);
+	box-shadow: rgba(0,0,0,1) 1px 1px 5px;
+	border-radius: 20px;
+	color:white;
+}
+#consumeCheck{
+	background:orange;
+	margin-left:-180px;
+}
+#consumeCancel{
+	background:grey;
+	margin-left:40px;
+}
+#consume_add1{
+	margin-left:-200px;
+}
+#consume_add2{
+	margin-left:30px;
+}
+#consumeTips{
+	position: absolute;
+	left:50%;
+	margin-left:-75px;
+	top:10px;
+	width:150px;
+	height:26px;
+	text-align: center;
+	font-family: "microsoft yahei";
+	color:#FFFF00;
+}
+#addMoney{
+	position: absolute;
+	right:160px;
+	z-index: 10;
+	width:80px;
+	height:30px;	
+	line-height: 30px;
+	font-family: "微软雅黑";
+	text-align: center;
+	background:#7D2316;
+	color:white;
+	text-decoration: none;
+	border-right: 1px solid white;
+	cursor: pointer;
+}

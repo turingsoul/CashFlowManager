@@ -14,6 +14,8 @@ function init() {
 	$("#updata_Output").hide(0);
 	$("#updata_Asset").hide(0);
 	$("#updata_Debt").hide(0);
+	$("#addConsumeBoard").hide(0);
+	$("#addMoneyBoard").hide(0);
 }
 
 /*点击添加按钮操作over*/

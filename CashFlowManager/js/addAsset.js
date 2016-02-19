@@ -180,7 +180,7 @@ function showAssetSum(){
                         console.log("综合zica"+assetResult);
                         $("#assetSum").text(fmoney(assetResult, 2));
                         $("#assetSum").attr("result",assetResult);
-                        showCakeChart();
+                        
                         
                       
                     }
