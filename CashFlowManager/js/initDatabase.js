@@ -82,6 +82,20 @@
             });
         });
     }
+	/*初始化流水账表*/
+	/*初始化用户表 init usertable*/
+	function initFlowAcount() {
+            var db = getCurrentDb();//初始化数据库
+            if(!db) {alert("您的浏览器不支持HTML5本地数据库");return;}
+            db.transaction(function (trans) {//启动一个事务，并设置回调函数
+                //执行创建表的Sql脚本
+                trans.executeSql("create table if not exists FlowTable(flowName text null,flowValue text null)", [], function (trans, result) {
+                }, function (trans, message) {//消息的回调函数alert(message);});
+            }, function (trans, result) {
+            }, function (trans, message) {
+            });
+        });
+    }
 	/*读取收入表*/
 	/*
 	 * 

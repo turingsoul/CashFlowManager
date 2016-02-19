@@ -98,7 +98,7 @@
 						<tr><td>003</td><td>003</td></tr>
 						<tr><td>003</td><td>003</td></tr>
 						<tr><td>003</td><td>003</td></tr>
-						<tr><td>003</td><td>003</td></tr>	
+						<tr><td>003</td><td>003</td></tr>		
 					</table>
 					
 				</td>
@@ -116,10 +116,12 @@
 		<a  id="addConsume" onclick="addConsume();">新增消费</a>
 		<!--新增收入-->
 		<a  id="addMoney" onclick="addMoney();">新增收入</a>
+		<!--导出流水账-->
+		<a  id="exportFlow" onclick="addMoney();">导出流水账</a>
 		<!--显示屏-->
 		<!--新增消费面板-->
 		<div id="addConsumeBoard">
-			<input type="text" class = "input_addinput" id="consume_add1" placeholder="消费项" />
+			<input type="text" class = "input_addinput" id="consume_add1" placeholder="消费项"/>
 			<input type="text" class = "input_addinput" id="consume_add2" placeholder="金额"/>
 			<div id="consumeTips"></div>
 			<select name="" id="consumeSelector">
@@ -128,7 +130,174 @@
 			<div id="consumeCheck" class="btnInput">确定</div>
 			<div id="consumeCancel" class="btnInput">取消</div>
 		</div>
-		
+		<!--流水账显示-->
+		<div id="showTablePanel">
+			<table id="flowTable">
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>	
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>				
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>				
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>
+				<tr>
+					<td>aaa</td>
+					<td>aaa</td>
+				</tr>				
+				
+			</table>
+			
+		</div>
+		<div id="clickToggle">查看流水账</div>
 		<div id="caption">
 			<font id="bigCaption"></font>
 			<font class="cashflow" id="cashflow1">0</font>
@@ -492,11 +661,7 @@
            			triangleColor: '#cd992f'  //右侧小三角颜色
 				});
 			})
-			function good(){
-				alert("cao");
-				
-				
-			}
+			
 		</script>
 		
 	</body>

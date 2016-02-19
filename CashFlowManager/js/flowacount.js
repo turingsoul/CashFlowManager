@@ -59,6 +59,7 @@ $("#consumeCheck").on("click",function(){
 		/*先执行增删操作*/
 		excuteConsume();
 		/*在执行数据库添加流水账操作*/
+		excuteAddFlow();
 	}
 })
 /*验证数据正确性*/
@@ -118,7 +119,7 @@ function excuteConsume(){
 				    	       	   			var tominus = parseFloat(resultValue)+parseFloat(nodeValue);
 				    	       	   			trans.executeSql("update AssetTable set AssetValue = ? where AssetName = ?", [Base64.encode(tominus),Base64.encode(nodeCatogery)],function (ts, data) {
 							    	       	    /*刷新*/
-							    	       	  
+							    	       	  	showmyFlowAcount();
 									    	    /*最后隐藏面板清空痕迹*/
 												$("#addConsumeBoard").hide(500);
 												/*填写内容归位*/
@@ -169,4 +170,69 @@ function addMoney(){
 	            });
 	           
          });
+}
+/*添加数据到流水账表单里面*/
+function excuteAddFlow(){
+	/*初始化流水表*/
+	initFlowAcount();
+	/*获取数据*/
+	var nodeName = $("#consume_add1").val();
+	var nodeValue = $("#consume_add2").val(); 
+	/*无条件添加到数据库中*/
+	var db = getCurrentDb();
+	db.transaction(function (trans) {
+				trans.executeSql("insert into FlowTable(flowName,flowValue) values(?,?)", [nodeName,nodeValue],function (ts, data) {
+	    	       	showmyFlowAcount();   
+	            }, function (ts, message) {
+	            });
+	           
+         });
+}
+/*添加流水账切换显示*/
+$("#showTablePanel").slideToggle(5,function(){
+		if($("#showTablePanel").is(":hidden")){
+			$("#clickToggle").animate({top:"0px"},5);
+		}else{
+			$("#clickToggle").animate({top:"150px"},5);
+		}
+	});
+$("#clickToggle").on("click",function(){
+	$("#showTablePanel").slideToggle(5,function(){
+		if($("#showTablePanel").is(":hidden")){
+			$("#clickToggle").animate({top:"0px"},5);
+		}else{
+			$("#clickToggle").animate({top:"150px"},5);
+			/*调用显示流水账的函数*/
+			showmyFlowAcount();
+		}
+	});
+})
+	
+function showmyFlowAcount(){
+	
+	var db = getCurrentDb();
+	db.transaction(function (trans) {
+        trans.executeSql("select * from FlowTable ", [], function (ts, data) {
+        	var a  = new Array(data.rows.length);
+        	var b = new Array(data.rows.length);
+            if (data){
+                for (var i = 0; i < data.rows.length; i++) {
+                     a[i] = data.rows.item(i).flowName;
+                     b[i] = data.rows.item(i).flowValue;
+                }
+                $("#flowTable").children().remove();
+                var wolength = data.rows.length;
+                if(wolength<=20){
+                	wolength = data.rows.length;
+                }else{
+                	wolength = 20;
+                }
+                
+               for(var i=data.rows.length-1,j=0;j<wolength;i--,j++){
+               		$("#flowTable").append("<tr ><td>"+a[i]+"</td><td>"+b[i]+"</td></tr>");
+               }
+            }
+            
+        }, function(ts, message) {initFlowAcount();});
+    });
 }
