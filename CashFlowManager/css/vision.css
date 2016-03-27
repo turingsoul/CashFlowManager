@@ -335,6 +335,23 @@ body{
 }
 #first{
 	font-size: 15px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+#second{
+	font-size: 15px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+#third{
+	font-size: 15px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+#forth{
+	font-size: 15px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 .delete{
 	display: block;
@@ -867,6 +884,8 @@ tr:hover{
 	left:50%;
 	margin-left:-220px;
 	margin-top:220px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 #fillgaugeTip{
 	position: absolute;
@@ -876,6 +895,8 @@ tr:hover{
 	text-align: center;
 	margin-top: 400px;
 	color:white;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 #mybox{
@@ -890,6 +911,8 @@ tr:hover{
 	color:white;
 	position: absolute;
 	left:70px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 #fillgauge6{
 	position:absolute;
@@ -898,6 +921,8 @@ tr:hover{
 	left:50%;
 	margin-left:-85px;
 	margin-top:420px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 #fillgauge6Tip{
 	position:absolute;
@@ -905,6 +930,8 @@ tr:hover{
 	left:50%;
 	margin-left:-2em;
 	margin-top:600px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 #headline{
 	text-align: center;
@@ -929,9 +956,9 @@ tr:hover{
 }
 #downloadchart{
 	position: absolute;
-	left:160px;
+	left:240px;
 	z-index: 10;
-	width:80px;
+	width:120px;
 	height:30px;	
 	line-height: 30px;
 	font-family: "微软雅黑";
@@ -939,12 +966,14 @@ tr:hover{
 	background:#7D2316;
 	color:white;
 	text-decoration: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 #downloadchart:hover{
 	position: absolute;
-	left:160px;
+	left:240px;
 	z-index: 10;
-	width:80px;
+	width:120px;
 	height:30px;	
 	line-height: 30px;
 	font-family: "微软雅黑";
@@ -958,7 +987,7 @@ tr:hover{
 	position: absolute;
 	left:0px;
 	z-index: 10;
-	width:80px;
+	width:120px;
 	height:30px;	
 	line-height: 30px;
 	font-family: "微软雅黑";
@@ -968,12 +997,14 @@ tr:hover{
 	text-decoration: none;
 	border-right: 1px solid white;
 	cursor: pointer;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 #addConsume:hover{
 	position: absolute;
 	left:0px;
 	z-index: 10;
-	width:80px;
+	width:120px;
 	height:30px;	
 	line-height: 30px;
 	font-family: "微软雅黑";
@@ -1041,9 +1072,9 @@ tr:hover{
 }
 #addMoney{
 	position: absolute;
-	left:80px;
+	left:120px;
 	z-index: 10;
-	width:80px;
+	width:120px;
 	height:30px;	
 	line-height: 30px;
 	font-family: "微软雅黑";
@@ -1054,12 +1085,14 @@ tr:hover{
 	border-left: 1px solid white;
 	border-right: 1px solid white;
 	cursor: pointer;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 #addMoney:hover{
 	position: absolute;
-	left:80px;
+	left:120px;
 	z-index: 10;
-	width:80px;
+	width:120px;
 	height:30px;	
 	line-height: 30px;
 	font-family: "微软雅黑";
@@ -1151,7 +1184,18 @@ tr:hover{
 	font-size: 15px;
 	line-height: 25px;
 	border-radius: 0px 0px 9px 9px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 #clickToggle:hover{
 	background:#fD2316;
+}
+#investPercent{
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	font-size: 1.5em;
+	font-family: "microsoft yahei";
+}
+#investPercent text{
+	fill:#FFF316;
 }
